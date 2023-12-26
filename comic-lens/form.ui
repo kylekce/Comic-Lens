@@ -41,28 +41,28 @@
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_2">
            <item>
-            <widget class="QPushButton" name="pushButton">
+            <widget class="QPushButton" name="zoom_in_button">
              <property name="text">
               <string>Zoom In</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton_2">
+            <widget class="QPushButton" name="zoom_out_button">
              <property name="text">
               <string>Zoom Out</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton_3">
+            <widget class="QPushButton" name="fit_height_button">
              <property name="text">
               <string>Fit Height</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton_4">
+            <widget class="QPushButton" name="fit_width_button">
              <property name="text">
               <string>Fit Width</string>
              </property>

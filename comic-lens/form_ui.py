@@ -48,25 +48,25 @@ class Ui_MainWindow(object):
         self.groupBox_2.setObjectName(u"groupBox_2")
         self.verticalLayout_2 = QVBoxLayout(self.groupBox_2)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.pushButton = QPushButton(self.groupBox_2)
-        self.pushButton.setObjectName(u"pushButton")
+        self.zoom_in_button = QPushButton(self.groupBox_2)
+        self.zoom_in_button.setObjectName(u"zoom_in_button")
 
-        self.verticalLayout_2.addWidget(self.pushButton)
+        self.verticalLayout_2.addWidget(self.zoom_in_button)
 
-        self.pushButton_2 = QPushButton(self.groupBox_2)
-        self.pushButton_2.setObjectName(u"pushButton_2")
+        self.zoom_out_button = QPushButton(self.groupBox_2)
+        self.zoom_out_button.setObjectName(u"zoom_out_button")
 
-        self.verticalLayout_2.addWidget(self.pushButton_2)
+        self.verticalLayout_2.addWidget(self.zoom_out_button)
 
-        self.pushButton_3 = QPushButton(self.groupBox_2)
-        self.pushButton_3.setObjectName(u"pushButton_3")
+        self.fit_height_button = QPushButton(self.groupBox_2)
+        self.fit_height_button.setObjectName(u"fit_height_button")
 
-        self.verticalLayout_2.addWidget(self.pushButton_3)
+        self.verticalLayout_2.addWidget(self.fit_height_button)
 
-        self.pushButton_4 = QPushButton(self.groupBox_2)
-        self.pushButton_4.setObjectName(u"pushButton_4")
+        self.fit_width_button = QPushButton(self.groupBox_2)
+        self.fit_width_button.setObjectName(u"fit_width_button")
 
-        self.verticalLayout_2.addWidget(self.pushButton_4)
+        self.verticalLayout_2.addWidget(self.fit_width_button)
 
 
         self.verticalLayout.addWidget(self.groupBox_2)
@@ -109,10 +109,10 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Comic Lens", None))
         self.groupBox_2.setTitle(QCoreApplication.translate("MainWindow", u"Zoom", None))
-        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Zoom In", None))
-        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Zoom Out", None))
-        self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"Fit Height", None))
-        self.pushButton_4.setText(QCoreApplication.translate("MainWindow", u"Fit Width", None))
+        self.zoom_in_button.setText(QCoreApplication.translate("MainWindow", u"Zoom In", None))
+        self.zoom_out_button.setText(QCoreApplication.translate("MainWindow", u"Zoom Out", None))
+        self.fit_height_button.setText(QCoreApplication.translate("MainWindow", u"Fit Height", None))
+        self.fit_width_button.setText(QCoreApplication.translate("MainWindow", u"Fit Width", None))
         self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"Translation", None))
         self.menuFile.setTitle(QCoreApplication.translate("MainWindow", u"File", None))
         self.menuEdit.setTitle(QCoreApplication.translate("MainWindow", u"Edit", None))
