@@ -26,11 +26,6 @@ class PDFViewer(QWidget):
         self.scene = QGraphicsScene(self)
         self.graphics_view.setScene(self.scene)
 
-        # Create a button to open a PDF file
-        self.open_button = QPushButton("Open PDF", self)
-        self.open_button.clicked.connect(self.open_pdf)
-        self.layout.addWidget(self.open_button)
-
         # Initialize PDF document and page variables
         self.document = None
         self.page = None
@@ -54,7 +49,7 @@ class PDFViewer(QWidget):
 
     def render_page(self):
         # Render the PDF page to a QPixmap
-        image = self.page.get_pixmap(matrix=fitz.Matrix(2, 2))
+        image = self.page.get_pixmap()  # matrix=fitz.Matrix(2, 2)
 
         qimage = QPixmap.fromImage(
             QImage(
