@@ -10,5 +10,8 @@
         <file>resources/bounding-box-circles.svg</file>
         <file>resources/skip-end-fill.svg</file>
         <file>resources/skip-start-fill.svg</file>
+        <file>resources/arrow-down-short.svg</file>
+        <file>resources/caret-down-fill.svg</file>
+        <file>resources/chevron-down-solid.svg</file>
     </qresource>
 </RCC>

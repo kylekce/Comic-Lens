@@ -23,7 +23,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.page_layout.addWidget(self.pdf_viewer)
 
         # Create an instance of the ScreenshotArea class
-        self.screenshot_area = ScreenshotArea()
+        self.screenshot_area = ScreenshotArea(self.pdf_viewer)
 
         # Action Buttons
         # File

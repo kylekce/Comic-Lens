@@ -16,17 +16,17 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QIcon, QImage, QKeySequence, QLinearGradient,
     QPainter, QPalette, QPixmap, QRadialGradient,
     QTransform)
-from PySide6.QtWidgets import (QApplication, QGroupBox, QHBoxLayout, QLabel,
-    QLayout, QLineEdit, QMainWindow, QMenu,
-    QMenuBar, QPushButton, QSizePolicy, QSpacerItem,
-    QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QComboBox, QGroupBox, QHBoxLayout,
+    QLabel, QLayout, QLineEdit, QMainWindow,
+    QMenu, QMenuBar, QPushButton, QSizePolicy,
+    QSpacerItem, QTextEdit, QVBoxLayout, QWidget)
 import rc_resource
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(587, 584)
+        MainWindow.resize(635, 584)
         sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -180,6 +180,45 @@ class Ui_MainWindow(object):
         self.groupBox.setMinimumSize(QSize(250, 0))
         self.verticalLayout = QVBoxLayout(self.groupBox)
         self.verticalLayout.setObjectName(u"verticalLayout")
+        self.comboBox = QComboBox(self.groupBox)
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.setObjectName(u"comboBox")
+
+        self.verticalLayout.addWidget(self.comboBox)
+
+        self.input_text_edit = QTextEdit(self.groupBox)
+        self.input_text_edit.setObjectName(u"input_text_edit")
+
+        self.verticalLayout.addWidget(self.input_text_edit)
+
+        self.label = QLabel(self.groupBox)
+        self.label.setObjectName(u"label")
+        sizePolicy4 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
+        sizePolicy4.setHorizontalStretch(0)
+        sizePolicy4.setVerticalStretch(0)
+        sizePolicy4.setHeightForWidth(self.label.sizePolicy().hasHeightForWidth())
+        self.label.setSizePolicy(sizePolicy4)
+        self.label.setPixmap(QPixmap(u":/resources/chevron-down-solid.svg"))
+        self.label.setScaledContents(False)
+        self.label.setAlignment(Qt.AlignCenter)
+        self.label.setWordWrap(False)
+
+        self.verticalLayout.addWidget(self.label)
+
+        self.comboBox_2 = QComboBox(self.groupBox)
+        self.comboBox_2.addItem("")
+        self.comboBox_2.addItem("")
+        self.comboBox_2.setObjectName(u"comboBox_2")
+
+        self.verticalLayout.addWidget(self.comboBox_2)
+
+        self.output_text_edit = QTextEdit(self.groupBox)
+        self.output_text_edit.setObjectName(u"output_text_edit")
+        self.output_text_edit.setReadOnly(True)
+
+        self.verticalLayout.addWidget(self.output_text_edit)
+
 
         self.main_layout_2.addWidget(self.groupBox)
 
@@ -247,7 +286,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 587, 25))
+        self.menubar.setGeometry(QRect(0, 0, 635, 25))
         self.menuFile = QMenu(self.menubar)
         self.menuFile.setObjectName(u"menuFile")
         self.menuAbout = QMenu(self.menubar)
@@ -285,22 +324,57 @@ class Ui_MainWindow(object):
         self.actionOpen_PDF.setText(QCoreApplication.translate("MainWindow", u"Open PDF", None))
         self.actionZoom_In.setText(QCoreApplication.translate("MainWindow", u"Zoom In", None))
         self.actionZoom_Out.setText(QCoreApplication.translate("MainWindow", u"Zoom Out", None))
-        self.actionFit.setText(QCoreApplication.translate("MainWindow", u"Fit", None))
+        self.actionFit.setText(QCoreApplication.translate("MainWindow", u"Fit to Page", None))
         self.actionNext_Page.setText(QCoreApplication.translate("MainWindow", u"Next Page", None))
         self.actionPrevious_Page.setText(QCoreApplication.translate("MainWindow", u"Previous Page", None))
         self.actionStart_Page.setText(QCoreApplication.translate("MainWindow", u"Start Page", None))
         self.actionLast_Page.setText(QCoreApplication.translate("MainWindow", u"Last Page", None))
         self.actionBox_Screenshot.setText(QCoreApplication.translate("MainWindow", u"Box Screenshot", None))
+#if QT_CONFIG(tooltip)
+        self.start_page.setToolTip(QCoreApplication.translate("MainWindow", u"Go to the Start Page", None))
+#endif // QT_CONFIG(tooltip)
         self.start_page.setText("")
+#if QT_CONFIG(tooltip)
+        self.previous_page.setToolTip(QCoreApplication.translate("MainWindow", u"Go to the Previous Page", None))
+#endif // QT_CONFIG(tooltip)
         self.previous_page.setText("")
-        self.page_label.setText(QCoreApplication.translate("MainWindow", u"of", None))
+#if QT_CONFIG(tooltip)
+        self.page_line_edit.setToolTip(QCoreApplication.translate("MainWindow", u"Current Page Number", None))
+#endif // QT_CONFIG(tooltip)
+        self.page_line_edit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"0", None))
+        self.page_label.setText(QCoreApplication.translate("MainWindow", u"of 0", None))
+#if QT_CONFIG(tooltip)
+        self.next_page.setToolTip(QCoreApplication.translate("MainWindow", u"Go to the Next Page", None))
+#endif // QT_CONFIG(tooltip)
         self.next_page.setText("")
+#if QT_CONFIG(tooltip)
+        self.last_page.setToolTip(QCoreApplication.translate("MainWindow", u"Go to the Last Page", None))
+#endif // QT_CONFIG(tooltip)
         self.last_page.setText("")
         self.groupBox_2.setTitle(QCoreApplication.translate("MainWindow", u"Selection", None))
+#if QT_CONFIG(tooltip)
+        self.box_screenshot.setToolTip(QCoreApplication.translate("MainWindow", u"Draw a Box for Screenshot", None))
+#endif // QT_CONFIG(tooltip)
         self.box_screenshot.setText(QCoreApplication.translate("MainWindow", u"Box Screenshot", None))
         self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"Translation", None))
+        self.comboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"Japanese", None))
+        self.comboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"English", None))
+
+        self.label.setText("")
+        self.comboBox_2.setItemText(0, QCoreApplication.translate("MainWindow", u"Detect Language", None))
+        self.comboBox_2.setItemText(1, QCoreApplication.translate("MainWindow", u"English", None))
+
+#if QT_CONFIG(tooltip)
+        self.fit.setToolTip(QCoreApplication.translate("MainWindow", u"Fit to Page", None))
+#endif // QT_CONFIG(tooltip)
         self.fit.setText("")
+#if QT_CONFIG(tooltip)
+        self.zoom_out.setToolTip(QCoreApplication.translate("MainWindow", u"Zoom Out", None))
+#endif // QT_CONFIG(tooltip)
         self.zoom_out.setText("")
+#if QT_CONFIG(tooltip)
+        self.zoom_in.setToolTip(QCoreApplication.translate("MainWindow", u"Zoom In", None))
+#endif // QT_CONFIG(tooltip)
         self.zoom_in.setText("")
         self.current_file_label.setText(QCoreApplication.translate("MainWindow", u"Open a PDF to start.", None))
         self.menuFile.setTitle(QCoreApplication.translate("MainWindow", u"File", None))

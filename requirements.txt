@@ -1,0 +1,9 @@
+Package            Version
+------------------ -------
+PyMuPDF            1.23.8
+PyMuPDFb           1.23.7
+PySide6            6.6.0
+PySide6-Addons     6.6.0
+PySide6-Essentials 6.6.0
+Pillow             10.1.0
+googletrans        3.0.0

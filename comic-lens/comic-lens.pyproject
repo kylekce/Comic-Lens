@@ -2,6 +2,7 @@
     "files": [
         "mainwindow.py",
         "form.ui",
-        "resource.qrc"
+        "resource.qrc",
+        " selectablespinbox.py"
     ]
 }
