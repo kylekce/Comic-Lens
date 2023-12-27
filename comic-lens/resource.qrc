@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/horizontal.svg</file>
+        <file>resources/zoom-in.svg</file>
+        <file>resources/zoom-out.svg</file>
+        <file>resources/backward-solid.svg</file>
+        <file>resources/caret-left-fill.svg</file>
+        <file>resources/caret-right-fill.svg</file>
+        <file>resources/forward-solid.svg</file>
+        <file>resources/bounding-box-circles.svg</file>
+        <file>resources/skip-end-fill.svg</file>
+        <file>resources/skip-start-fill.svg</file>
+    </qresource>
+</RCC>
