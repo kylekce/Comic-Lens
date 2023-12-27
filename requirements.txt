@@ -1,5 +1,6 @@
 Package            Version
 ------------------ -------
+googletrans        3.0.0
 PyMuPDF            1.23.8
 PyMuPDFb           1.23.7
 PySide6            6.6.0
