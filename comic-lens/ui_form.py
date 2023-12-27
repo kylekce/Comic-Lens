@@ -68,11 +68,6 @@ class Ui_MainWindow(object):
         self.page_layout = QHBoxLayout()
         self.page_layout.setObjectName(u"page_layout")
         self.page_layout.setSizeConstraint(QLayout.SetDefaultConstraint)
-        self.label = QLabel(self.centralwidget)
-        self.label.setObjectName(u"label")
-
-        self.page_layout.addWidget(self.label)
-
 
         self.main_layout.addLayout(self.page_layout)
 
@@ -296,7 +291,6 @@ class Ui_MainWindow(object):
         self.actionStart_Page.setText(QCoreApplication.translate("MainWindow", u"Start Page", None))
         self.actionLast_Page.setText(QCoreApplication.translate("MainWindow", u"Last Page", None))
         self.actionBox_Screenshot.setText(QCoreApplication.translate("MainWindow", u"Box Screenshot", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.start_page.setText("")
         self.previous_page.setText("")
         self.page_label.setText(QCoreApplication.translate("MainWindow", u"of", None))
