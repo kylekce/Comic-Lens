@@ -55,31 +55,27 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.fit.clicked.connect(self.fit_event)
 
         # Page Navigation
-        self.actionNext_Page.triggered.connect(self.pdf_viewer.next_page)
-        self.actionPrevious_Page.triggered.connect(self.pdf_viewer.previous_page)
-        self.actionStart_Page.triggered.connect(self.pdf_viewer.start_page)
-        self.actionLast_Page.triggered.connect(self.pdf_viewer.last_page)
+        self.actionNext_Page.triggered.connect(self.next_page_event)
+        self.actionPrevious_Page.triggered.connect(self.previous_page_event)
+        self.actionStart_Page.triggered.connect(self.start_page_event)
+        self.actionLast_Page.triggered.connect(self.last_page_event)
 
-        self.next_page.clicked.connect(
-            lambda: self.pdf_viewer.next_page(self.page_line_edit)
-        )
-        self.previous_page.clicked.connect(
-            lambda: self.pdf_viewer.previous_page(self.page_line_edit)
-        )
-        self.start_page.clicked.connect(
-            lambda: self.pdf_viewer.start_page(self.page_line_edit)
-        )
-        self.last_page.clicked.connect(
-            lambda: self.pdf_viewer.last_page(self.page_line_edit)
-        )
-        self.page_line_edit.returnPressed.connect(
-            lambda: self.pdf_viewer.page_line_edit_return_pressed(
-                int(self.page_line_edit.text())
-            )
-        )
+        self.next_page.clicked.connect(self.next_page_event)
+        self.previous_page.clicked.connect(self.previous_page_event)
+        self.start_page.clicked.connect(self.start_page_event)
+        self.last_page.clicked.connect(self.last_page_event)
+
+        self.page_line_edit.returnPressed.connect(self.line_edit_return_pressed)
 
         # Screenshot toggle
         self.box_screenshot.toggled.connect(self.box_screenshot_toggled)
+
+        # Translate button
+        self.translate_button.clicked.connect(
+            lambda: self.screenshot_area.run_translator(
+                self.input_text_edit.toPlainText()
+            )
+        )
 
     def box_screenshot_toggled(self, checked):
         """If the box is checked, replace the PDFViewer widget with the ScreenshotArea widget"""
@@ -120,6 +116,31 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         """Connect the fit action to the fit method"""
         self.pdf_viewer.fit()
         self.disable_screenshot_box()
+
+    def next_page_event(self):
+        """Connect the next page action to the next page method"""
+        self.pdf_viewer.next_page(self.page_line_edit)
+        self.screenshot_area.reset()
+
+    def previous_page_event(self):
+        """Connect the previous page action to the previous page method"""
+        self.pdf_viewer.previous_page(self.page_line_edit)
+        self.screenshot_area.reset()
+
+    def start_page_event(self):
+        """Connect the start page action to the start page method"""
+        self.pdf_viewer.start_page(self.page_line_edit)
+        self.screenshot_area.reset()
+
+    def last_page_event(self):
+        """Connect the last page action to the last page method"""
+        self.pdf_viewer.last_page(self.page_line_edit)
+        self.screenshot_area.reset()
+
+    def line_edit_return_pressed(self):
+        """Connect the page line edit return pressed event to the page line edit return pressed method"""
+        self.pdf_viewer.page_line_edit_return_pressed(int(self.page_line_edit.text()))
+        self.screenshot_area.reset()
 
 
 if __name__ == "__main__":

@@ -19,19 +19,345 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
 from PySide6.QtWidgets import (QApplication, QComboBox, QGroupBox, QHBoxLayout,
     QLabel, QLayout, QLineEdit, QMainWindow,
     QMenu, QMenuBar, QPushButton, QSizePolicy,
-    QSpacerItem, QTextEdit, QVBoxLayout, QWidget)
+    QSlider, QSpacerItem, QSpinBox, QTextEdit,
+    QVBoxLayout, QWidget)
 import rc_resource
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(681, 584)
+        MainWindow.resize(733, 723)
         sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
         MainWindow.setSizePolicy(sizePolicy)
+        MainWindow.setStyleSheet(u"/*Copyright (c) DevSec Studio. All rights reserved.\n"
+"\n"
+"MIT License\n"
+"\n"
+"Permission is hereby granted, free of charge, to any person obtaining a copy\n"
+"of this software and associated documentation files (the \"Software\"), to deal\n"
+"in the Software without restriction, including without limitation the rights\n"
+"to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n"
+"copies of the Software, and to permit persons to whom the Software is\n"
+"furnished to do so, subject to the following conditions:\n"
+"\n"
+"The above copyright notice and this permission notice shall be included in all\n"
+"copies or substantial portions of the Software.\n"
+"\n"
+"THE SOFTWARE IS PROVIDED *AS IS*, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n"
+"IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n"
+"FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n"
+"AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n"
+"LIABILITY, WHETHER IN AN ACT"
+                        "ION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n"
+"OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
+"*/\n"
+"\n"
+"/*-----QWidget-----*/\n"
+"QWidget\n"
+"{\n"
+"	background-color: #1c1c1c;\n"
+"	color: #f5f5f5;\n"
+"	border-color: #000000;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"/*-----QPushButton-----*/\n"
+"QPushButton\n"
+"{\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"    border-radius : 0px;\n"
+"    color: rgb(255, 255, 255);\n"
+"	padding: 5px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::hover\n"
+"{\n"
+"    background-color: rgb(79, 79, 79);\n"
+"    border: none;\n"
+"    border-radius : 0px;\n"
+"    color: rgb(0, 0, 0);\n"
+"    font: bold 12px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::pressed\n"
+"{\n"
+"    background-color: #b4b4b4;\n"
+"    border: none;\n"
+"    border-radius : 0px;\n"
+"    color: rgb(0, 0, 0);\n"
+"    font: bold 12px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"/*-----QCheckBox-----*/\n"
+"QCheckBox\n"
+"{\n"
+"	background-color: transparent;\n"
+"	color: #b9b9bb;\n"
+"	font-wei"
+                        "ght: bold;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QCheckBox::indicator\n"
+"{\n"
+"    color: #b1b1b1;\n"
+"    background-color: #000;\n"
+"    border: 1px solid #41cd52;\n"
+"    width: 12px;\n"
+"    height: 12px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QCheckBox::indicator:checked\n"
+"{\n"
+"    image:url(\"./ressources/check.png\"); /*To replace*/\n"
+"	background-color: #1f2b2b;\n"
+"    border: 1px solid #41cd52;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QCheckBox::indicator:unchecked:hover\n"
+"{\n"
+"    border: 1px solid #41cd52;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QCheckBox::disabled\n"
+"{\n"
+"	color: #656565;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QCheckBox::indicator:disabled\n"
+"{\n"
+"	background-color: #656565;\n"
+"	color: #656565;\n"
+"    border: 1px solid #656565;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"/*-----QListView-----*/\n"
+"QListView \n"
+"{\n"
+"    border : none;\n"
+"    background-color: #343434;\n"
+"    color: white;\n"
+"    show-decoration-selected: 1; /* make the selection span the entire width of the view */\n"
+"    outline: 0;\n"
+"	border: 1px solid gray;\n"
+"\n"
+"}\n"
+"\n"
+""
+                        "\n"
+"QListView::disabled \n"
+"{\n"
+"	background-color: #656565;\n"
+"	color: #1b1b1b;\n"
+"    border: 1px solid #656565;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QListView::item \n"
+"{\n"
+"    padding: 1px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QListView::item:alternate \n"
+"{\n"
+"    background-color: #4a4b4d;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QListView::item:selected \n"
+"{\n"
+"    border: 1px solid #6a6ea9;\n"
+"    border: none;\n"
+"    color: rgb(0, 0, 0);\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QListView::item:selected:!active \n"
+"{\n"
+"    background-color: #41cd52;\n"
+"    border: none;\n"
+"    color: rgb(0, 0, 0);\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QListView::item:selected:active \n"
+"{\n"
+"    background-color: #41cd52;\n"
+"    border: none;\n"
+"    color: rgb(0, 0, 0);\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QListView::item:hover {\n"
+"    background-color: #262626;\n"
+"    border: none;\n"
+"    color: white;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"/*-----QScrollBar-----*/\n"
+"QScrollBar:horizontal\n"
+"{\n"
+"    border: 1px solid #222222;\n"
+"    background-color: #3d3d3d;\n"
+"    height: 15"
+                        "px;\n"
+"    margin: 0px 16px 0 16px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QScrollBar::handle:horizontal\n"
+"{\n"
+"    background-color: #41cd52;\n"
+"    min-height: 20px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QScrollBar::add-line:horizontal\n"
+"{\n"
+"    border: 1px solid #1b1b19;\n"
+"    background-color: #41cd52;\n"
+"    width: 14px;\n"
+"    subcontrol-position: right;\n"
+"    subcontrol-origin: margin;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QScrollBar::sub-line:horizontal\n"
+"{\n"
+"    border: 1px solid #1b1b19;\n"
+"    background-color: #41cd52;\n"
+"    width: 14px;\n"
+"    subcontrol-position: left;\n"
+"    subcontrol-origin: margin;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QScrollBar::right-arrow:horizontal\n"
+"{\n"
+"    image: url(://arrow-right.png);\n"
+"    width: 6px;\n"
+"    height: 6px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QScrollBar::left-arrow:horizontal\n"
+"{\n"
+"    image: url(://arrow-left.png);\n"
+"    width: 6px;\n"
+"    height: 6px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal\n"
+"{\n"
+"    background: none;\n"
+""
+                        "\n"
+"}\n"
+"\n"
+"\n"
+"QScrollBar:vertical\n"
+"{\n"
+"    background-color: #3d3d3d;\n"
+"    width: 13px;\n"
+"    margin: 16px 0 16px 0;\n"
+"    border: 1px solid #222222;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QScrollBar::handle:vertical\n"
+"{\n"
+"    background-color: #41cd52;\n"
+"    min-height: 20px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QScrollBar::add-line:vertical\n"
+"{\n"
+"    border: 1px solid #1b1b19;\n"
+"    background-color: #41cd52;\n"
+"    height: 14px;\n"
+"    subcontrol-position: bottom;\n"
+"    subcontrol-origin: margin;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QScrollBar::sub-line:vertical\n"
+"{\n"
+"    border: 1px solid #41cd52;\n"
+"    background-color: #41cd52;\n"
+"    height: 14px;\n"
+"    subcontrol-position: top;\n"
+"    subcontrol-origin: margin;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QScrollBar::up-arrow:vertical\n"
+"{\n"
+"    image: url(://arrow-up.png);\n"
+"    width: 6px;\n"
+"    height: 6px;\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QScrollBar::down-arrow:vertical\n"
+"{\n"
+"    image: url(://arrow-down.png);\n"
+"    width: 6px;\n"
+"    height: 6px;\n"
+"\n"
+""
+                        "}\n"
+"\n"
+"\n"
+"QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical\n"
+"{\n"
+"    background-color: none;\n"
+"\n"
+"}")
         self.actionOpen_PDF = QAction(MainWindow)
         self.actionOpen_PDF.setObjectName(u"actionOpen_PDF")
         self.actionZoom_In = QAction(MainWindow)
@@ -172,6 +498,68 @@ class Ui_MainWindow(object):
 
         self.main_layout_2.addWidget(self.groupBox_2)
 
+        self.groupBox_3 = QGroupBox(self.centralwidget)
+        self.groupBox_3.setObjectName(u"groupBox_3")
+        self.verticalLayout_4 = QVBoxLayout(self.groupBox_3)
+        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
+        self.label = QLabel(self.groupBox_3)
+        self.label.setObjectName(u"label")
+
+        self.verticalLayout_4.addWidget(self.label)
+
+        self.horizontalLayout = QHBoxLayout()
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.resize_factor_slider = QSlider(self.groupBox_3)
+        self.resize_factor_slider.setObjectName(u"resize_factor_slider")
+        self.resize_factor_slider.setMinimum(1)
+        self.resize_factor_slider.setMaximum(100)
+        self.resize_factor_slider.setValue(5)
+        self.resize_factor_slider.setOrientation(Qt.Horizontal)
+
+        self.horizontalLayout.addWidget(self.resize_factor_slider)
+
+        self.resize_factor_box = QSpinBox(self.groupBox_3)
+        self.resize_factor_box.setObjectName(u"resize_factor_box")
+        self.resize_factor_box.setMinimum(1)
+        self.resize_factor_box.setMaximum(100)
+        self.resize_factor_box.setSingleStep(1)
+        self.resize_factor_box.setValue(5)
+
+        self.horizontalLayout.addWidget(self.resize_factor_box)
+
+
+        self.verticalLayout_4.addLayout(self.horizontalLayout)
+
+        self.label_2 = QLabel(self.groupBox_3)
+        self.label_2.setObjectName(u"label_2")
+
+        self.verticalLayout_4.addWidget(self.label_2)
+
+        self.horizontalLayout_3 = QHBoxLayout()
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.median_blur_slider = QSlider(self.groupBox_3)
+        self.median_blur_slider.setObjectName(u"median_blur_slider")
+        self.median_blur_slider.setMinimum(1)
+        self.median_blur_slider.setMaximum(100)
+        self.median_blur_slider.setValue(5)
+        self.median_blur_slider.setOrientation(Qt.Horizontal)
+
+        self.horizontalLayout_3.addWidget(self.median_blur_slider)
+
+        self.median_blur_box = QSpinBox(self.groupBox_3)
+        self.median_blur_box.setObjectName(u"median_blur_box")
+        self.median_blur_box.setMinimum(1)
+        self.median_blur_box.setMaximum(100)
+        self.median_blur_box.setValue(5)
+
+        self.horizontalLayout_3.addWidget(self.median_blur_box)
+
+
+        self.verticalLayout_4.addLayout(self.horizontalLayout_3)
+
+
+        self.main_layout_2.addWidget(self.groupBox_3)
+
         self.groupBox = QGroupBox(self.centralwidget)
         self.groupBox.setObjectName(u"groupBox")
         sizePolicy3 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
@@ -290,7 +678,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 681, 25))
+        self.menubar.setGeometry(QRect(0, 0, 733, 25))
         self.menuFile = QMenu(self.menubar)
         self.menuFile.setObjectName(u"menuFile")
         self.menuAbout = QMenu(self.menubar)
@@ -317,6 +705,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
+        self.input_combo_box.setCurrentIndex(4)
         self.output_combo_box.setCurrentIndex(2)
 
 
@@ -361,6 +750,21 @@ class Ui_MainWindow(object):
         self.box_screenshot.setToolTip(QCoreApplication.translate("MainWindow", u"Draw a Box for Screenshot", None))
 #endif // QT_CONFIG(tooltip)
         self.box_screenshot.setText(QCoreApplication.translate("MainWindow", u"Box Screenshot", None))
+        self.groupBox_3.setTitle(QCoreApplication.translate("MainWindow", u"Character Recognition", None))
+#if QT_CONFIG(tooltip)
+        self.label.setToolTip(QCoreApplication.translate("MainWindow", u"Adjust the factor by which the image is resized. Larger values may improve OCR on high-resolution images. (default: 5).", None))
+#endif // QT_CONFIG(tooltip)
+        self.label.setText(QCoreApplication.translate("MainWindow", u"Resize Factor", None))
+#if QT_CONFIG(tooltip)
+        self.resize_factor_slider.setToolTip(QCoreApplication.translate("MainWindow", u"Adjust the factor by which the image is resized. Larger values may improve OCR on high-resolution images. (default: 5).", None))
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(tooltip)
+        self.label_2.setToolTip(QCoreApplication.translate("MainWindow", u"Adjust the kernel size for median blur. This controls the degree of smoothing applied to the image. (default: 5).", None))
+#endif // QT_CONFIG(tooltip)
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"Median Blur", None))
+#if QT_CONFIG(tooltip)
+        self.median_blur_slider.setToolTip(QCoreApplication.translate("MainWindow", u"Adjust the kernel size for median blur. This controls the degree of smoothing applied to the image. (default: 5).", None))
+#endif // QT_CONFIG(tooltip)
         self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"Translation", None))
         self.input_combo_box.setItemText(0, QCoreApplication.translate("MainWindow", u"Chinese - Simplified", None))
         self.input_combo_box.setItemText(1, QCoreApplication.translate("MainWindow", u"Chinese - Simplified (Vertical)", None))

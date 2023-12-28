@@ -167,15 +167,23 @@ class ScreenshotArea(QWidget):
         self.input_text = self.ocr.image_to_string(self.filepath, self.ocr_language)
         self.input_text_edit.setText(self.input_text)
 
-    def run_translator(self):
+    def run_translator(self, input_text=None):
         """Perform translation and display the result in the output_text_edit widget"""
         try:
+            if input_text:
+                self.input_text = input_text
+
             self.output_text = self.translation.translate_to(
                 self.input_text, self.output_language, self.input_language
             )
 
             self.output_text_edit.setText(self.output_text)
+
         except TypeError:
+            self.input_text_edit.setText("Character or text not found.")
+            self.output_text_edit.setText("")
+        except Exception as e:
+            self.input_text_edit.setText(f"Something went wrong: \n\n{e}")
             self.output_text_edit.setText("")
 
     def lang_ocr_translate(self):

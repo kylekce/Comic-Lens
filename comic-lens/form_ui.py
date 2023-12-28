@@ -19,14 +19,15 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
 from PySide6.QtWidgets import (QApplication, QComboBox, QGroupBox, QHBoxLayout,
     QLabel, QLayout, QLineEdit, QMainWindow,
     QMenu, QMenuBar, QPushButton, QSizePolicy,
-    QSpacerItem, QTextEdit, QVBoxLayout, QWidget)
+    QSlider, QSpacerItem, QSpinBox, QTextEdit,
+    QVBoxLayout, QWidget)
 import resource_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(681, 584)
+        MainWindow.resize(733, 723)
         sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -172,6 +173,68 @@ class Ui_MainWindow(object):
 
         self.main_layout_2.addWidget(self.groupBox_2)
 
+        self.groupBox_3 = QGroupBox(self.centralwidget)
+        self.groupBox_3.setObjectName(u"groupBox_3")
+        self.verticalLayout_4 = QVBoxLayout(self.groupBox_3)
+        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
+        self.label = QLabel(self.groupBox_3)
+        self.label.setObjectName(u"label")
+
+        self.verticalLayout_4.addWidget(self.label)
+
+        self.horizontalLayout = QHBoxLayout()
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.resize_factor_slider = QSlider(self.groupBox_3)
+        self.resize_factor_slider.setObjectName(u"resize_factor_slider")
+        self.resize_factor_slider.setMinimum(1)
+        self.resize_factor_slider.setMaximum(100)
+        self.resize_factor_slider.setValue(5)
+        self.resize_factor_slider.setOrientation(Qt.Horizontal)
+
+        self.horizontalLayout.addWidget(self.resize_factor_slider)
+
+        self.resize_factor_box = QSpinBox(self.groupBox_3)
+        self.resize_factor_box.setObjectName(u"resize_factor_box")
+        self.resize_factor_box.setMinimum(1)
+        self.resize_factor_box.setMaximum(100)
+        self.resize_factor_box.setSingleStep(1)
+        self.resize_factor_box.setValue(5)
+
+        self.horizontalLayout.addWidget(self.resize_factor_box)
+
+
+        self.verticalLayout_4.addLayout(self.horizontalLayout)
+
+        self.label_2 = QLabel(self.groupBox_3)
+        self.label_2.setObjectName(u"label_2")
+
+        self.verticalLayout_4.addWidget(self.label_2)
+
+        self.horizontalLayout_3 = QHBoxLayout()
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.median_blur_slider = QSlider(self.groupBox_3)
+        self.median_blur_slider.setObjectName(u"median_blur_slider")
+        self.median_blur_slider.setMinimum(1)
+        self.median_blur_slider.setMaximum(100)
+        self.median_blur_slider.setValue(5)
+        self.median_blur_slider.setOrientation(Qt.Horizontal)
+
+        self.horizontalLayout_3.addWidget(self.median_blur_slider)
+
+        self.median_blur_box = QSpinBox(self.groupBox_3)
+        self.median_blur_box.setObjectName(u"median_blur_box")
+        self.median_blur_box.setMinimum(1)
+        self.median_blur_box.setMaximum(100)
+        self.median_blur_box.setValue(5)
+
+        self.horizontalLayout_3.addWidget(self.median_blur_box)
+
+
+        self.verticalLayout_4.addLayout(self.horizontalLayout_3)
+
+
+        self.main_layout_2.addWidget(self.groupBox_3)
+
         self.groupBox = QGroupBox(self.centralwidget)
         self.groupBox.setObjectName(u"groupBox")
         sizePolicy3 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
@@ -290,7 +353,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 681, 25))
+        self.menubar.setGeometry(QRect(0, 0, 733, 25))
         self.menuFile = QMenu(self.menubar)
         self.menuFile.setObjectName(u"menuFile")
         self.menuAbout = QMenu(self.menubar)
@@ -317,6 +380,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
+        self.input_combo_box.setCurrentIndex(4)
         self.output_combo_box.setCurrentIndex(2)
 
 
@@ -361,6 +425,21 @@ class Ui_MainWindow(object):
         self.box_screenshot.setToolTip(QCoreApplication.translate("MainWindow", u"Draw a Box for Screenshot", None))
 #endif // QT_CONFIG(tooltip)
         self.box_screenshot.setText(QCoreApplication.translate("MainWindow", u"Box Screenshot", None))
+        self.groupBox_3.setTitle(QCoreApplication.translate("MainWindow", u"Character Recognition", None))
+#if QT_CONFIG(tooltip)
+        self.label.setToolTip(QCoreApplication.translate("MainWindow", u"Adjust the factor by which the image is resized. Larger values may improve OCR on high-resolution images. (default: 5).", None))
+#endif // QT_CONFIG(tooltip)
+        self.label.setText(QCoreApplication.translate("MainWindow", u"Resize Factor", None))
+#if QT_CONFIG(tooltip)
+        self.resize_factor_slider.setToolTip(QCoreApplication.translate("MainWindow", u"Adjust the factor by which the image is resized. Larger values may improve OCR on high-resolution images. (default: 5).", None))
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(tooltip)
+        self.label_2.setToolTip(QCoreApplication.translate("MainWindow", u"Adjust the kernel size for median blur. This controls the degree of smoothing applied to the image. (default: 5).", None))
+#endif // QT_CONFIG(tooltip)
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"Median Blur", None))
+#if QT_CONFIG(tooltip)
+        self.median_blur_slider.setToolTip(QCoreApplication.translate("MainWindow", u"Adjust the kernel size for median blur. This controls the degree of smoothing applied to the image. (default: 5).", None))
+#endif // QT_CONFIG(tooltip)
         self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"Translation", None))
         self.input_combo_box.setItemText(0, QCoreApplication.translate("MainWindow", u"Chinese - Simplified", None))
         self.input_combo_box.setItemText(1, QCoreApplication.translate("MainWindow", u"Chinese - Simplified (Vertical)", None))
