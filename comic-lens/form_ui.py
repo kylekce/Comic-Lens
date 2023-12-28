@@ -26,7 +26,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(635, 584)
+        MainWindow.resize(681, 584)
         sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -51,6 +51,8 @@ class Ui_MainWindow(object):
         self.actionBox_Screenshot = QAction(MainWindow)
         self.actionBox_Screenshot.setObjectName(u"actionBox_Screenshot")
         self.actionBox_Screenshot.setCheckable(True)
+        self.actionAsd = QAction(MainWindow)
+        self.actionAsd.setObjectName(u"actionAsd")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         sizePolicy1 = QSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.Expanding)
@@ -180,38 +182,41 @@ class Ui_MainWindow(object):
         self.groupBox.setMinimumSize(QSize(250, 0))
         self.verticalLayout = QVBoxLayout(self.groupBox)
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.comboBox = QComboBox(self.groupBox)
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.setObjectName(u"comboBox")
+        self.input_combo_box = QComboBox(self.groupBox)
+        self.input_combo_box.addItem("")
+        self.input_combo_box.addItem("")
+        self.input_combo_box.addItem("")
+        self.input_combo_box.addItem("")
+        self.input_combo_box.addItem("")
+        self.input_combo_box.addItem("")
+        self.input_combo_box.addItem("")
+        self.input_combo_box.addItem("")
+        self.input_combo_box.setObjectName(u"input_combo_box")
 
-        self.verticalLayout.addWidget(self.comboBox)
+        self.verticalLayout.addWidget(self.input_combo_box)
 
         self.input_text_edit = QTextEdit(self.groupBox)
         self.input_text_edit.setObjectName(u"input_text_edit")
 
         self.verticalLayout.addWidget(self.input_text_edit)
 
-        self.label = QLabel(self.groupBox)
-        self.label.setObjectName(u"label")
-        sizePolicy4 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
-        sizePolicy4.setHorizontalStretch(0)
-        sizePolicy4.setVerticalStretch(0)
-        sizePolicy4.setHeightForWidth(self.label.sizePolicy().hasHeightForWidth())
-        self.label.setSizePolicy(sizePolicy4)
-        self.label.setPixmap(QPixmap(u":/resources/chevron-down-solid.svg"))
-        self.label.setScaledContents(False)
-        self.label.setAlignment(Qt.AlignCenter)
-        self.label.setWordWrap(False)
+        self.translate_button = QPushButton(self.groupBox)
+        self.translate_button.setObjectName(u"translate_button")
+        icon5 = QIcon()
+        icon5.addFile(u":/resources/caret-down-fill.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.translate_button.setIcon(icon5)
 
-        self.verticalLayout.addWidget(self.label)
+        self.verticalLayout.addWidget(self.translate_button)
 
-        self.comboBox_2 = QComboBox(self.groupBox)
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.setObjectName(u"comboBox_2")
+        self.output_combo_box = QComboBox(self.groupBox)
+        self.output_combo_box.addItem("")
+        self.output_combo_box.addItem("")
+        self.output_combo_box.addItem("")
+        self.output_combo_box.addItem("")
+        self.output_combo_box.addItem("")
+        self.output_combo_box.setObjectName(u"output_combo_box")
 
-        self.verticalLayout.addWidget(self.comboBox_2)
+        self.verticalLayout.addWidget(self.output_combo_box)
 
         self.output_text_edit = QTextEdit(self.groupBox)
         self.output_text_edit.setObjectName(u"output_text_edit")
@@ -222,7 +227,6 @@ class Ui_MainWindow(object):
 
         self.main_layout_2.addWidget(self.groupBox)
 
-        self.main_layout_2.setStretch(1, 1)
 
         self.main.addLayout(self.main_layout_2)
 
@@ -241,9 +245,9 @@ class Ui_MainWindow(object):
         self.fit.setObjectName(u"fit")
         sizePolicy2.setHeightForWidth(self.fit.sizePolicy().hasHeightForWidth())
         self.fit.setSizePolicy(sizePolicy2)
-        icon5 = QIcon()
-        icon5.addFile(u":/resources/horizontal.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.fit.setIcon(icon5)
+        icon6 = QIcon()
+        icon6.addFile(u":/resources/horizontal.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.fit.setIcon(icon6)
 
         self.toolbar_layout.addWidget(self.fit)
 
@@ -251,9 +255,9 @@ class Ui_MainWindow(object):
         self.zoom_out.setObjectName(u"zoom_out")
         sizePolicy2.setHeightForWidth(self.zoom_out.sizePolicy().hasHeightForWidth())
         self.zoom_out.setSizePolicy(sizePolicy2)
-        icon6 = QIcon()
-        icon6.addFile(u":/resources/zoom-out.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.zoom_out.setIcon(icon6)
+        icon7 = QIcon()
+        icon7.addFile(u":/resources/zoom-out.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.zoom_out.setIcon(icon7)
 
         self.toolbar_layout.addWidget(self.zoom_out)
 
@@ -261,9 +265,9 @@ class Ui_MainWindow(object):
         self.zoom_in.setObjectName(u"zoom_in")
         sizePolicy2.setHeightForWidth(self.zoom_in.sizePolicy().hasHeightForWidth())
         self.zoom_in.setSizePolicy(sizePolicy2)
-        icon7 = QIcon()
-        icon7.addFile(u":/resources/zoom-in.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.zoom_in.setIcon(icon7)
+        icon8 = QIcon()
+        icon8.addFile(u":/resources/zoom-in.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.zoom_in.setIcon(icon8)
 
         self.toolbar_layout.addWidget(self.zoom_in)
 
@@ -286,23 +290,21 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 635, 25))
+        self.menubar.setGeometry(QRect(0, 0, 681, 25))
         self.menuFile = QMenu(self.menubar)
         self.menuFile.setObjectName(u"menuFile")
         self.menuAbout = QMenu(self.menubar)
         self.menuAbout.setObjectName(u"menuAbout")
+        self.menuAbout.setSeparatorsCollapsible(False)
         self.menuView = QMenu(self.menubar)
         self.menuView.setObjectName(u"menuView")
         self.menuPage = QMenu(self.menubar)
         self.menuPage.setObjectName(u"menuPage")
-        self.menuTranslation = QMenu(self.menubar)
-        self.menuTranslation.setObjectName(u"menuTranslation")
         MainWindow.setMenuBar(self.menubar)
 
         self.menubar.addAction(self.menuFile.menuAction())
         self.menubar.addAction(self.menuPage.menuAction())
         self.menubar.addAction(self.menuView.menuAction())
-        self.menubar.addAction(self.menuTranslation.menuAction())
         self.menubar.addAction(self.menuAbout.menuAction())
         self.menuFile.addAction(self.actionOpen_PDF)
         self.menuView.addAction(self.actionZoom_In)
@@ -312,9 +314,11 @@ class Ui_MainWindow(object):
         self.menuPage.addAction(self.actionPrevious_Page)
         self.menuPage.addAction(self.actionStart_Page)
         self.menuPage.addAction(self.actionLast_Page)
-        self.menuTranslation.addAction(self.actionBox_Screenshot)
 
         self.retranslateUi(MainWindow)
+
+        self.output_combo_box.setCurrentIndex(2)
+
 
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
@@ -330,6 +334,7 @@ class Ui_MainWindow(object):
         self.actionStart_Page.setText(QCoreApplication.translate("MainWindow", u"Start Page", None))
         self.actionLast_Page.setText(QCoreApplication.translate("MainWindow", u"Last Page", None))
         self.actionBox_Screenshot.setText(QCoreApplication.translate("MainWindow", u"Box Screenshot", None))
+        self.actionAsd.setText(QCoreApplication.translate("MainWindow", u"Asd", None))
 #if QT_CONFIG(tooltip)
         self.start_page.setToolTip(QCoreApplication.translate("MainWindow", u"Go to the Start Page", None))
 #endif // QT_CONFIG(tooltip)
@@ -357,12 +362,25 @@ class Ui_MainWindow(object):
 #endif // QT_CONFIG(tooltip)
         self.box_screenshot.setText(QCoreApplication.translate("MainWindow", u"Box Screenshot", None))
         self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"Translation", None))
-        self.comboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"Japanese", None))
-        self.comboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"English", None))
+        self.input_combo_box.setItemText(0, QCoreApplication.translate("MainWindow", u"Chinese - Simplified", None))
+        self.input_combo_box.setItemText(1, QCoreApplication.translate("MainWindow", u"Chinese - Simplified (Vertical)", None))
+        self.input_combo_box.setItemText(2, QCoreApplication.translate("MainWindow", u"Chinese - Traditional", None))
+        self.input_combo_box.setItemText(3, QCoreApplication.translate("MainWindow", u"Chinese - Traditional (Vertical)", None))
+        self.input_combo_box.setItemText(4, QCoreApplication.translate("MainWindow", u"English", None))
+        self.input_combo_box.setItemText(5, QCoreApplication.translate("MainWindow", u"Japanese", None))
+        self.input_combo_box.setItemText(6, QCoreApplication.translate("MainWindow", u"Japanese (Vertical)", None))
+        self.input_combo_box.setItemText(7, QCoreApplication.translate("MainWindow", u"Korean", None))
 
-        self.label.setText("")
-        self.comboBox_2.setItemText(0, QCoreApplication.translate("MainWindow", u"Detect Language", None))
-        self.comboBox_2.setItemText(1, QCoreApplication.translate("MainWindow", u"English", None))
+        self.input_combo_box.setCurrentText(QCoreApplication.translate("MainWindow", u"English", None))
+#if QT_CONFIG(tooltip)
+        self.translate_button.setToolTip(QCoreApplication.translate("MainWindow", u"Re-run the Translation", None))
+#endif // QT_CONFIG(tooltip)
+        self.translate_button.setText(QCoreApplication.translate("MainWindow", u"Translate to", None))
+        self.output_combo_box.setItemText(0, QCoreApplication.translate("MainWindow", u"Chinese - Simplified", None))
+        self.output_combo_box.setItemText(1, QCoreApplication.translate("MainWindow", u"Chinese - Traditional", None))
+        self.output_combo_box.setItemText(2, QCoreApplication.translate("MainWindow", u"English", None))
+        self.output_combo_box.setItemText(3, QCoreApplication.translate("MainWindow", u"Japanese", None))
+        self.output_combo_box.setItemText(4, QCoreApplication.translate("MainWindow", u"Korean", None))
 
 #if QT_CONFIG(tooltip)
         self.fit.setToolTip(QCoreApplication.translate("MainWindow", u"Fit to Page", None))
@@ -381,6 +399,5 @@ class Ui_MainWindow(object):
         self.menuAbout.setTitle(QCoreApplication.translate("MainWindow", u"About", None))
         self.menuView.setTitle(QCoreApplication.translate("MainWindow", u"View", None))
         self.menuPage.setTitle(QCoreApplication.translate("MainWindow", u"Page", None))
-        self.menuTranslation.setTitle(QCoreApplication.translate("MainWindow", u"Selection", None))
     # retranslateUi
 

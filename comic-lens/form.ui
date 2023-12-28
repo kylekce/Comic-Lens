@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>635</width>
+    <width>681</width>
     <height>584</height>
    </rect>
   </property>
@@ -192,7 +192,7 @@
        </layout>
       </item>
       <item>
-       <layout class="QVBoxLayout" name="main_layout_2" stretch="0,1">
+       <layout class="QVBoxLayout" name="main_layout_2" stretch="0,0">
         <property name="sizeConstraint">
          <enum>QLayout::SetDefaultConstraint</enum>
         </property>
@@ -254,7 +254,35 @@
           </property>
           <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,0,0">
            <item>
-            <widget class="QComboBox" name="comboBox">
+            <widget class="QComboBox" name="input_combo_box">
+             <property name="currentText">
+              <string>English</string>
+             </property>
+             <item>
+              <property name="text">
+               <string>Chinese - Simplified</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Chinese - Simplified (Vertical)</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Chinese - Traditional</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Chinese - Traditional (Vertical)</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>English</string>
+              </property>
+             </item>
              <item>
               <property name="text">
                <string>Japanese</string>
@@ -262,7 +290,12 @@
              </item>
              <item>
               <property name="text">
-               <string>English</string>
+               <string>Japanese (Vertical)</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Korean</string>
               </property>
              </item>
             </widget>
@@ -271,40 +304,47 @@
             <widget class="QTextEdit" name="input_text_edit"/>
            </item>
            <item>
-            <widget class="QLabel" name="label">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
+            <widget class="QPushButton" name="translate_button">
+             <property name="toolTip">
+              <string>Re-run the Translation</string>
              </property>
              <property name="text">
-              <string/>
+              <string>Translate to</string>
              </property>
-             <property name="pixmap">
-              <pixmap resource="resource.qrc">:/resources/chevron-down-solid.svg</pixmap>
-             </property>
-             <property name="scaledContents">
-              <bool>false</bool>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-             <property name="wordWrap">
-              <bool>false</bool>
+             <property name="icon">
+              <iconset resource="resource.qrc">
+               <normaloff>:/resources/caret-down-fill.svg</normaloff>:/resources/caret-down-fill.svg</iconset>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QComboBox" name="comboBox_2">
+            <widget class="QComboBox" name="output_combo_box">
+             <property name="currentIndex">
+              <number>2</number>
+             </property>
              <item>
               <property name="text">
-               <string>Detect Language</string>
+               <string>Chinese - Simplified</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Chinese - Traditional</string>
               </property>
              </item>
              <item>
               <property name="text">
                <string>English</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Japanese</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Korean</string>
               </property>
              </item>
             </widget>
@@ -424,7 +464,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>635</width>
+     <width>681</width>
      <height>25</height>
     </rect>
    </property>
@@ -437,6 +477,9 @@
    <widget class="QMenu" name="menuAbout">
     <property name="title">
      <string>About</string>
+    </property>
+    <property name="separatorsCollapsible">
+     <bool>false</bool>
     </property>
    </widget>
    <widget class="QMenu" name="menuView">
@@ -456,16 +499,9 @@
     <addaction name="actionStart_Page"/>
     <addaction name="actionLast_Page"/>
    </widget>
-   <widget class="QMenu" name="menuTranslation">
-    <property name="title">
-     <string>Selection</string>
-    </property>
-    <addaction name="actionBox_Screenshot"/>
-   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuPage"/>
    <addaction name="menuView"/>
-   <addaction name="menuTranslation"/>
    <addaction name="menuAbout"/>
   </widget>
   <action name="actionOpen_PDF">
@@ -514,6 +550,11 @@
    </property>
    <property name="text">
     <string>Box Screenshot</string>
+   </property>
+  </action>
+  <action name="actionAsd">
+   <property name="text">
+    <string>Asd</string>
    </property>
   </action>
  </widget>

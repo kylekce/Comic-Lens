@@ -8,7 +8,6 @@ from PySide6.QtWidgets import QApplication, QMainWindow
 #     pyside6-uic form.ui -o ui_form.py, or
 #     pyside2-uic form.ui -o ui_form.py
 from ui_form import Ui_MainWindow
-
 from pdf_viewer_widget import PDFViewer
 from screenshot_widget import ScreenshotArea
 
@@ -23,29 +22,44 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.page_layout.addWidget(self.pdf_viewer)
 
         # Create an instance of the ScreenshotArea class
-        self.screenshot_area = ScreenshotArea(self.pdf_viewer)
+        self.screenshot_area = ScreenshotArea(
+            self.pdf_viewer,
+            self.input_text_edit,
+            self.output_text_edit,
+            self.input_combo_box,
+            self.output_combo_box,
+        )
 
-        # Action Buttons
+        # If the input_combo_box is changed, rerun the screenshot_area.lang_ocr_translate method
+        self.input_combo_box.currentTextChanged.connect(
+            self.screenshot_area.lang_ocr_translate
+        )
+        self.output_combo_box.currentTextChanged.connect(
+            self.screenshot_area.lang_ocr_translate
+        )
+
         # File
         self.actionOpen_PDF.triggered.connect(
             lambda: self.pdf_viewer.open_pdf(
                 self.current_file_label, self.page_label, self.page_line_edit
             )
         )
-        # Page
+
+        # View
+        self.actionZoom_In.triggered.connect(self.zoom_in_event)
+        self.actionZoom_Out.triggered.connect(self.zoom_out_event)
+        self.actionFit.triggered.connect(self.fit_event)
+
+        self.zoom_out.clicked.connect(self.zoom_out_event)
+        self.zoom_in.clicked.connect(self.zoom_in_event)
+        self.fit.clicked.connect(self.fit_event)
+
+        # Page Navigation
         self.actionNext_Page.triggered.connect(self.pdf_viewer.next_page)
         self.actionPrevious_Page.triggered.connect(self.pdf_viewer.previous_page)
         self.actionStart_Page.triggered.connect(self.pdf_viewer.start_page)
         self.actionLast_Page.triggered.connect(self.pdf_viewer.last_page)
-        # View
-        self.actionZoom_In.triggered.connect(self.pdf_viewer.zoom_in)
-        self.actionZoom_Out.triggered.connect(self.pdf_viewer.zoom_out)
-        self.actionFit.triggered.connect(self.pdf_viewer.fit)
-        # Translation
-        self.actionBox_Screenshot.toggled.connect(self.box_screenshot_toggled)
 
-        # Tool Buttons
-        # Page Navigation
         self.next_page.clicked.connect(
             lambda: self.pdf_viewer.next_page(self.page_line_edit)
         )
@@ -63,14 +77,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 int(self.page_line_edit.text())
             )
         )
-        # Zoom
-        self.zoom_out.clicked.connect(self.pdf_viewer.zoom_out)
-        self.zoom_in.clicked.connect(self.pdf_viewer.zoom_in)
-        self.fit.clicked.connect(self.pdf_viewer.fit)
-        # Screenshot
+
+        # Screenshot toggle
         self.box_screenshot.toggled.connect(self.box_screenshot_toggled)
 
     def box_screenshot_toggled(self, checked):
+        """If the box is checked, replace the PDFViewer widget with the ScreenshotArea widget"""
         if checked:
             self.box_screenshot.setChecked(True)
             self.actionBox_Screenshot.setChecked(True)
@@ -83,12 +95,31 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.page_layout.replaceWidget(self.screenshot_area, self.pdf_viewer)
             self.screenshot_area.hide()
 
-    # If window is resized, disable the screenshot box
-    def resizeEvent(self, event):
+    def disable_screenshot_box(self):
+        """Disable the screenshot box"""
         if self.box_screenshot.isChecked():
             self.screenshot_area.reset()
             self.box_screenshot.setChecked(False)
             self.actionBox_Screenshot.setChecked(False)
+
+    def resizeEvent(self, event):
+        """If window is resized, call the disable_screenshot_box method"""
+        self.disable_screenshot_box()
+
+    def zoom_in_event(self):
+        """Connect the zoom in action to the zoom in method"""
+        self.pdf_viewer.zoom_in()
+        self.disable_screenshot_box()
+
+    def zoom_out_event(self):
+        """Connect the zoom out action to the zoom out method"""
+        self.pdf_viewer.zoom_out()
+        self.disable_screenshot_box()
+
+    def fit_event(self):
+        """Connect the fit action to the fit method"""
+        self.pdf_viewer.fit()
+        self.disable_screenshot_box()
 
 
 if __name__ == "__main__":
