@@ -51,7 +51,7 @@ QGroupBox
 /* QSpinBox */
 QSpinBox
 {
-    border
+    border: none;
 }
 
 
