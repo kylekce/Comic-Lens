@@ -114,7 +114,8 @@ QPushButton::pressed
 
 QPushButton::selected
 {
-    
+    background-color: #f2e9e4;
+    border: none;
 }
 
 
