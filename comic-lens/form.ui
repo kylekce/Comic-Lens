@@ -51,7 +51,7 @@
     <item>
      <layout class="QHBoxLayout" name="main" stretch="2,1">
       <property name="leftMargin">
-       <number>11</number>
+       <number>0</number>
       </property>
       <property name="rightMargin">
        <number>0</number>
@@ -89,7 +89,7 @@
                </property>
                <property name="sizeHint" stdset="0">
                 <size>
-                 <width>103</width>
+                 <width>108</width>
                  <height>20</height>
                 </size>
                </property>
@@ -217,7 +217,7 @@
                </property>
                <property name="sizeHint" stdset="0">
                 <size>
-                 <width>102</width>
+                 <width>107</width>
                  <height>20</height>
                 </size>
                </property>

@@ -69,7 +69,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
         self.main = QHBoxLayout()
         self.main.setObjectName(u"main")
-        self.main.setContentsMargins(11, -1, 0, -1)
+        self.main.setContentsMargins(0, -1, 0, -1)
         self.main_layout = QVBoxLayout()
         self.main_layout.setObjectName(u"main_layout")
         self.page_layout = QHBoxLayout()
@@ -87,7 +87,7 @@ class Ui_MainWindow(object):
         self.page_navigation_frame.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_5 = QHBoxLayout(self.page_navigation_frame)
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
-        self.horizontalSpacer_3 = QSpacerItem(103, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer_3 = QSpacerItem(108, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout_5.addItem(self.horizontalSpacer_3)
 
@@ -149,7 +149,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_5.addWidget(self.last_page)
 
-        self.horizontalSpacer_2 = QSpacerItem(102, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer_2 = QSpacerItem(107, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout_5.addItem(self.horizontalSpacer_2)
 
