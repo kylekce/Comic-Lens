@@ -42,7 +42,7 @@ QLabel
 QGroupBox
 {
     background-color: transparent;
-    border: 1px solid 
+    border: 1px solid t
 }
 
 /* QTextEdit */
