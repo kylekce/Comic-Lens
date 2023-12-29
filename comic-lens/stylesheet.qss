@@ -19,7 +19,7 @@ QFrame#main_layout_2_frame
 QFrame#page_navigation_frame
 {
     background-color: #141414;
-    border: 7px solid #403f4c;
+    border: px solid #403f4c;
     border-radius: 25;  
 }
 
@@ -72,7 +72,7 @@ QPushButton
 
 QPushButton::hover
 {
-    background-color: #f2e9e4;
+    background-color: rgb(79, 79, 79);
     border: none;
     border-radius : 0px;
     font: bold 12px;
@@ -81,7 +81,7 @@ QPushButton::hover
 
 QPushButton::pressed
 {
-    background-color: #f2e9e4;
+    background-color: #b4b4b4;
     border: none;
     border-radius : 0px;
     font: bold 12px;
