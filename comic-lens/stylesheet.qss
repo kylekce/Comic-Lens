@@ -39,7 +39,10 @@ QLabel
 }
 
 /* QGroupBox */
-QGroupBox 
+QGroupBox
+{
+    
+}
 
 /*QPushButton*/
 QPushButton
