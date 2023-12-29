@@ -14,7 +14,7 @@ QFrame#main_layout_2_frame
 {
     background-color: #141414;
     border: 3px solid #403f4c;
-    border-right: 0px;
+    border-right: none;
 }
 QFrame#page_navigation_frame
 {
