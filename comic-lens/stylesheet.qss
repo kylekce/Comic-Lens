@@ -148,14 +148,6 @@ QListView::item:alternate
 
 }
 
-QListView::item:selected:!active 
-{
-    background-color: #41cd52;
-    border: none;
-
-}
-
-
 QListView::item:selected
 {
     background-color: #41cd52;
