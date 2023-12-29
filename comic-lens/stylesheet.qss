@@ -54,7 +54,11 @@ QSpinBox
     border: none;
 }
 
+/* QComboBox */
 QComboBox
+{
+    
+}
 
 /* QTextEdit */
 QTextEdit
