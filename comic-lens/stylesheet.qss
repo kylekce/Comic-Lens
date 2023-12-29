@@ -101,7 +101,7 @@ QPushButton
 QPushButton::hover
 {
     background-color: #f2e9e4;
-    color: black;
+    color: #f2e9e4;
     border: none;
 }
 
