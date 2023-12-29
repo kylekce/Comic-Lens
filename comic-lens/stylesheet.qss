@@ -123,36 +123,6 @@ QCheckBox::indicator
 }
 
 
-QCheckBox::indicator:checked
-{
-    image:url("./ressources/check.png"); /*To replace*/
-	background-color: #1f2b2b;
-    border: 1px solid #41cd52;
-
-}
-
-
-QCheckBox::indicator:unchecked:hover
-{
-    border: 1px solid #41cd52;
-
-}
-
-
-QCheckBox::disabled
-{
-
-}
-
-
-QCheckBox::indicator:disabled
-{
-	background-color: #656565;
-    border: 1px solid #656565;
-
-}
-
-
 /*QListView*/
 QListView 
 {
