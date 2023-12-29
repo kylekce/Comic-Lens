@@ -31,7 +31,7 @@ QFrame#pdf_viewer
 /* QMenuBar */
 QMenuBar
 {
-    background-color: ; /* #141414; */
+    background-color: /* #141414; */
     color: #000000;
 }
 
