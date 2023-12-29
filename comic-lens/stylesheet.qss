@@ -2,7 +2,6 @@
 * {
     font-family: "Segoe UI", sans-serif;
     color: #f2e9e4;
-    font-style: bold;
     background-color: #343434;
 }
 
