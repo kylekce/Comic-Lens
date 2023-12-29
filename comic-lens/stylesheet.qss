@@ -21,7 +21,7 @@ QFrame#main_layout_2_frame
 }
 QFrame#page_navigation_frame
 {
-    
+    background-color: #141414;
 }
 
 /* pdf_viewer */
