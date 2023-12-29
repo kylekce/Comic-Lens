@@ -94,14 +94,14 @@ QPushButton
 QPushButton::hover
 {
     background-color: #f2e9e4;
-    translate-x
+    border: none;
 }
 
 
 QPushButton::pressed
 {
     background-color: #f2e9e4;
-    translate-x
+    border: none;
 }
 
 
