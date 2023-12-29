@@ -151,14 +151,10 @@ QListView::item:alternate
 QListView::item:selected
 {
     background-color: #41cd52;
-    border: none;
-
 }
 
 QListView::item:hover {
     background-color: #41cd52;
-    border: none;
-
 }
 
 
