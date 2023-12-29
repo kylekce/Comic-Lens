@@ -10,7 +10,9 @@ QFrame#toolbar_frame
     background-color: #141414;
 }
 QFrame#main_layout_frame
-
+{
+    background
+}
 QFrame#main_layout_2_frame
 {
     background-color: #141414;
