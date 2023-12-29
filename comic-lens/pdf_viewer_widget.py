@@ -52,7 +52,7 @@ class PDFViewer(QWidget):
             # Update the current file label with the name of the PDF file
             file_name = file_path.split("/")[-1].split(".")[0]
 
-            current_file_label.setText(f"Currently reading: {file_name}")
+            current_file_label.setText(file_name)
 
             # Update the the page label with the total number of pages
             page_label.setText(f"of {self.document.page_count}")
