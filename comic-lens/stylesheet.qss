@@ -58,7 +58,7 @@ QTextEdit
 QLineEdit
 {
     border: 0;
-    background:
+    background: #403f4c
 }
 
 /* QSlider */
