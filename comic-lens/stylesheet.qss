@@ -69,6 +69,7 @@ QTextEdit
 /* QLineEdit */
 QLineEdit
 {
+    color: #ffffff;
     border: none;
     background: #393939
 }
