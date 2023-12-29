@@ -63,7 +63,7 @@ QTextEdit
 /*QPushButton*/
 QPushButton
 {
-    background-color: transparent;
+    background-color: 41cd52;
     border: none;
     border-radius : 0px;
 	padding: 5px;
