@@ -34,7 +34,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
         MainWindow.setSizePolicy(sizePolicy)
         font = QFont()
-        font.setFamilies([u"HelveticaNowText Medium"])
+        font.setFamilies([u"Verdana"])
         MainWindow.setFont(font)
         MainWindow.setStyleSheet(u"")
         self.actionOpen_PDF = QAction(MainWindow)
@@ -90,7 +90,7 @@ class Ui_MainWindow(object):
         self.page_navigation_frame.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_5 = QHBoxLayout(self.page_navigation_frame)
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
-        self.horizontalSpacer_3 = QSpacerItem(107, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer_3 = QSpacerItem(106, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout_5.addItem(self.horizontalSpacer_3)
 
@@ -152,7 +152,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_5.addWidget(self.last_page)
 
-        self.horizontalSpacer_2 = QSpacerItem(106, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer_2 = QSpacerItem(105, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout_5.addItem(self.horizontalSpacer_2)
 
@@ -178,7 +178,7 @@ class Ui_MainWindow(object):
         self.groupBox_2 = QGroupBox(self.main_layout_2_frame)
         self.groupBox_2.setObjectName(u"groupBox_2")
         font1 = QFont()
-        font1.setFamilies([u"HelveticaNowText Medium"])
+        font1.setFamilies([u"Verdana"])
         font1.setBold(False)
         self.groupBox_2.setFont(font1)
         self.horizontalLayout_2 = QHBoxLayout(self.groupBox_2)
@@ -398,7 +398,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 766, 20))
+        self.menubar.setGeometry(QRect(0, 0, 766, 23))
         self.menuFile = QMenu(self.menubar)
         self.menuFile.setObjectName(u"menuFile")
         self.menuAbout = QMenu(self.menubar)
