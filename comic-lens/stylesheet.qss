@@ -45,7 +45,9 @@ QGroupBox
 }
 
 /* QTextEdit */
-
+{
+    background-c
+}
 
 /*QPushButton*/
 QPushButton
