@@ -19,7 +19,7 @@ QFrame#main_layout_2_frame
     border: 3px solid #343434;
     border-right: none;
 }
-#page_navigation_frame
+QFrame#page_navigation_frame
 {
     background-color: #141414;
     border: 7px solid #343434;
