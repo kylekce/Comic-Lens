@@ -58,7 +58,7 @@ QTextEdit
 /* QLineEdit */
 QLineEdit
 {
-    border: 0;
+    border: none;
     background: #403f4c
 }
 
