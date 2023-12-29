@@ -51,8 +51,8 @@ QLabel
 QGroupBox
 {
     background-color: transparent;
-    border: 1px solid #41cd52
-    margin-top
+    border: 1px solid #41cd52;
+    margin-top: 5px;
 }
 
 /* QSpinBox */
