@@ -57,8 +57,8 @@ QTextEdit
 /* QLineEdit */
 QLineEdit
 {
-    border: 0
-    background
+    border: 0;
+    background:
 }
 
 /* QSlider */
