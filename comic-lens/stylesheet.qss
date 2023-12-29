@@ -82,7 +82,10 @@ QSlider
 {
     background: transparent
 }
-QS
+QSlider::handle
+{
+    
+}
 
 /*QPushButton*/
 QPushButton
