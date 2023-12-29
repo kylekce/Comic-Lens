@@ -155,7 +155,6 @@ QListView::item:selected
 
 }
 
-
 QListView::item:hover {
     background-color: #262626;
     border: none;
