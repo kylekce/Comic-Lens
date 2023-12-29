@@ -31,7 +31,7 @@ QFrame#pdf_viewer
 /* QLabel */
 QLabel
 {
-    color: #ffffff;
+    color: #e0d7d2;
     background-color: transparent;
 }
 
@@ -60,7 +60,7 @@ QComboBox
 /* QTextEdit */
 QTextEdit
 {
-    color: #ffffff;
+    color: #e0d7d2;
     background-color: #393939;
     border: none;
     border-radius: 5px;
@@ -69,7 +69,7 @@ QTextEdit
 /* QLineEdit */
 QLineEdit
 {
-    color: #ffffff;
+    color: #e0d7d2;
     border: none;
     background: #393939
 }
