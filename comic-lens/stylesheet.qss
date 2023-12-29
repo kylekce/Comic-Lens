@@ -46,6 +46,7 @@ QGroupBox
 /* QSpinBox */
 QSpinBox
 {
+    color: #e0d7d2;
     background: #393939;
     border: none;
 }
