@@ -1,7 +1,7 @@
 /* ALl */
 * {
     color: #e0d7d2;
-    background-color: #343434;
+    /* background-color: #343434; */
 }
 
 /*QFrame*/
