@@ -16,11 +16,11 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QIcon, QImage, QKeySequence, QLinearGradient,
     QPainter, QPalette, QPixmap, QRadialGradient,
     QTransform)
-from PySide6.QtWidgets import (QApplication, QComboBox, QGroupBox, QHBoxLayout,
-    QLabel, QLayout, QLineEdit, QMainWindow,
-    QMenu, QMenuBar, QPushButton, QSizePolicy,
-    QSlider, QSpacerItem, QSpinBox, QTextEdit,
-    QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QGroupBox,
+    QHBoxLayout, QLabel, QLayout, QLineEdit,
+    QMainWindow, QMenu, QMenuBar, QPushButton,
+    QSizePolicy, QSlider, QSpacerItem, QSpinBox,
+    QTextEdit, QVBoxLayout, QWidget)
 import rc_resource
 
 class Ui_MainWindow(object):
@@ -33,331 +33,7 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
         MainWindow.setSizePolicy(sizePolicy)
-        MainWindow.setStyleSheet(u"/*Copyright (c) DevSec Studio. All rights reserved.\n"
-"\n"
-"MIT License\n"
-"\n"
-"Permission is hereby granted, free of charge, to any person obtaining a copy\n"
-"of this software and associated documentation files (the \"Software\"), to deal\n"
-"in the Software without restriction, including without limitation the rights\n"
-"to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n"
-"copies of the Software, and to permit persons to whom the Software is\n"
-"furnished to do so, subject to the following conditions:\n"
-"\n"
-"The above copyright notice and this permission notice shall be included in all\n"
-"copies or substantial portions of the Software.\n"
-"\n"
-"THE SOFTWARE IS PROVIDED *AS IS*, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n"
-"IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n"
-"FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n"
-"AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n"
-"LIABILITY, WHETHER IN AN ACT"
-                        "ION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n"
-"OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
-"*/\n"
-"\n"
-"/*-----QWidget-----*/\n"
-"QWidget\n"
-"{\n"
-"	background-color: #1c1c1c;\n"
-"	color: #f5f5f5;\n"
-"	border-color: #000000;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"/*-----QPushButton-----*/\n"
-"QPushButton\n"
-"{\n"
-"    background-color: transparent;\n"
-"    border: none;\n"
-"    border-radius : 0px;\n"
-"    color: rgb(255, 255, 255);\n"
-"	padding: 5px;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QPushButton::hover\n"
-"{\n"
-"    background-color: rgb(79, 79, 79);\n"
-"    border: none;\n"
-"    border-radius : 0px;\n"
-"    color: rgb(0, 0, 0);\n"
-"    font: bold 12px;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QPushButton::pressed\n"
-"{\n"
-"    background-color: #b4b4b4;\n"
-"    border: none;\n"
-"    border-radius : 0px;\n"
-"    color: rgb(0, 0, 0);\n"
-"    font: bold 12px;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"/*-----QCheckBox-----*/\n"
-"QCheckBox\n"
-"{\n"
-"	background-color: transparent;\n"
-"	color: #b9b9bb;\n"
-"	font-wei"
-                        "ght: bold;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QCheckBox::indicator\n"
-"{\n"
-"    color: #b1b1b1;\n"
-"    background-color: #000;\n"
-"    border: 1px solid #41cd52;\n"
-"    width: 12px;\n"
-"    height: 12px;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QCheckBox::indicator:checked\n"
-"{\n"
-"    image:url(\"./ressources/check.png\"); /*To replace*/\n"
-"	background-color: #1f2b2b;\n"
-"    border: 1px solid #41cd52;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QCheckBox::indicator:unchecked:hover\n"
-"{\n"
-"    border: 1px solid #41cd52;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QCheckBox::disabled\n"
-"{\n"
-"	color: #656565;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QCheckBox::indicator:disabled\n"
-"{\n"
-"	background-color: #656565;\n"
-"	color: #656565;\n"
-"    border: 1px solid #656565;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"/*-----QListView-----*/\n"
-"QListView \n"
-"{\n"
-"    border : none;\n"
-"    background-color: #343434;\n"
-"    color: white;\n"
-"    show-decoration-selected: 1; /* make the selection span the entire width of the view */\n"
-"    outline: 0;\n"
-"	border: 1px solid gray;\n"
-"\n"
-"}\n"
-"\n"
-""
-                        "\n"
-"QListView::disabled \n"
-"{\n"
-"	background-color: #656565;\n"
-"	color: #1b1b1b;\n"
-"    border: 1px solid #656565;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QListView::item \n"
-"{\n"
-"    padding: 1px;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QListView::item:alternate \n"
-"{\n"
-"    background-color: #4a4b4d;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QListView::item:selected \n"
-"{\n"
-"    border: 1px solid #6a6ea9;\n"
-"    border: none;\n"
-"    color: rgb(0, 0, 0);\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QListView::item:selected:!active \n"
-"{\n"
-"    background-color: #41cd52;\n"
-"    border: none;\n"
-"    color: rgb(0, 0, 0);\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QListView::item:selected:active \n"
-"{\n"
-"    background-color: #41cd52;\n"
-"    border: none;\n"
-"    color: rgb(0, 0, 0);\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QListView::item:hover {\n"
-"    background-color: #262626;\n"
-"    border: none;\n"
-"    color: white;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"/*-----QScrollBar-----*/\n"
-"QScrollBar:horizontal\n"
-"{\n"
-"    border: 1px solid #222222;\n"
-"    background-color: #3d3d3d;\n"
-"    height: 15"
-                        "px;\n"
-"    margin: 0px 16px 0 16px;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QScrollBar::handle:horizontal\n"
-"{\n"
-"    background-color: #41cd52;\n"
-"    min-height: 20px;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QScrollBar::add-line:horizontal\n"
-"{\n"
-"    border: 1px solid #1b1b19;\n"
-"    background-color: #41cd52;\n"
-"    width: 14px;\n"
-"    subcontrol-position: right;\n"
-"    subcontrol-origin: margin;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QScrollBar::sub-line:horizontal\n"
-"{\n"
-"    border: 1px solid #1b1b19;\n"
-"    background-color: #41cd52;\n"
-"    width: 14px;\n"
-"    subcontrol-position: left;\n"
-"    subcontrol-origin: margin;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QScrollBar::right-arrow:horizontal\n"
-"{\n"
-"    image: url(://arrow-right.png);\n"
-"    width: 6px;\n"
-"    height: 6px;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QScrollBar::left-arrow:horizontal\n"
-"{\n"
-"    image: url(://arrow-left.png);\n"
-"    width: 6px;\n"
-"    height: 6px;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal\n"
-"{\n"
-"    background: none;\n"
-""
-                        "\n"
-"}\n"
-"\n"
-"\n"
-"QScrollBar:vertical\n"
-"{\n"
-"    background-color: #3d3d3d;\n"
-"    width: 13px;\n"
-"    margin: 16px 0 16px 0;\n"
-"    border: 1px solid #222222;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QScrollBar::handle:vertical\n"
-"{\n"
-"    background-color: #41cd52;\n"
-"    min-height: 20px;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QScrollBar::add-line:vertical\n"
-"{\n"
-"    border: 1px solid #1b1b19;\n"
-"    background-color: #41cd52;\n"
-"    height: 14px;\n"
-"    subcontrol-position: bottom;\n"
-"    subcontrol-origin: margin;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QScrollBar::sub-line:vertical\n"
-"{\n"
-"    border: 1px solid #41cd52;\n"
-"    background-color: #41cd52;\n"
-"    height: 14px;\n"
-"    subcontrol-position: top;\n"
-"    subcontrol-origin: margin;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QScrollBar::up-arrow:vertical\n"
-"{\n"
-"    image: url(://arrow-up.png);\n"
-"    width: 6px;\n"
-"    height: 6px;\n"
-"\n"
-"}\n"
-"\n"
-"\n"
-"QScrollBar::down-arrow:vertical\n"
-"{\n"
-"    image: url(://arrow-down.png);\n"
-"    width: 6px;\n"
-"    height: 6px;\n"
-"\n"
-""
-                        "}\n"
-"\n"
-"\n"
-"QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical\n"
-"{\n"
-"    background-color: none;\n"
-"\n"
-"}")
+        MainWindow.setStyleSheet(u"")
         self.actionOpen_PDF = QAction(MainWindow)
         self.actionOpen_PDF.setObjectName(u"actionOpen_PDF")
         self.actionZoom_In = QAction(MainWindow)
@@ -388,9 +64,12 @@ class Ui_MainWindow(object):
         self.centralwidget.setSizePolicy(sizePolicy1)
         self.centralwidget.setLayoutDirection(Qt.LeftToRight)
         self.verticalLayout_3 = QVBoxLayout(self.centralwidget)
+        self.verticalLayout_3.setSpacing(0)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
         self.main = QHBoxLayout()
         self.main.setObjectName(u"main")
+        self.main.setContentsMargins(11, -1, 0, -1)
         self.main_layout = QVBoxLayout()
         self.main_layout.setObjectName(u"main_layout")
         self.page_layout = QHBoxLayout()
@@ -478,12 +157,23 @@ class Ui_MainWindow(object):
         self.main_layout_2 = QVBoxLayout()
         self.main_layout_2.setObjectName(u"main_layout_2")
         self.main_layout_2.setSizeConstraint(QLayout.SetDefaultConstraint)
-        self.groupBox_2 = QGroupBox(self.centralwidget)
+        self.main_layout_2_frame = QFrame(self.centralwidget)
+        self.main_layout_2_frame.setObjectName(u"main_layout_2_frame")
+        self.main_layout_2_frame.setFrameShape(QFrame.StyledPanel)
+        self.main_layout_2_frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_2 = QVBoxLayout(self.main_layout_2_frame)
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.groupBox_2 = QGroupBox(self.main_layout_2_frame)
         self.groupBox_2.setObjectName(u"groupBox_2")
         self.horizontalLayout_2 = QHBoxLayout(self.groupBox_2)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.box_screenshot = QPushButton(self.groupBox_2)
         self.box_screenshot.setObjectName(u"box_screenshot")
+        sizePolicy3 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
+        sizePolicy3.setHorizontalStretch(0)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.box_screenshot.sizePolicy().hasHeightForWidth())
+        self.box_screenshot.setSizePolicy(sizePolicy3)
         icon4 = QIcon()
         icon4.addFile(u":/resources/bounding-box-circles.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.box_screenshot.setIcon(icon4)
@@ -496,9 +186,9 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.addItem(self.horizontalSpacer_4)
 
 
-        self.main_layout_2.addWidget(self.groupBox_2)
+        self.verticalLayout_2.addWidget(self.groupBox_2)
 
-        self.groupBox_3 = QGroupBox(self.centralwidget)
+        self.groupBox_3 = QGroupBox(self.main_layout_2_frame)
         self.groupBox_3.setObjectName(u"groupBox_3")
         self.verticalLayout_4 = QVBoxLayout(self.groupBox_3)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
@@ -558,15 +248,15 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.addLayout(self.horizontalLayout_3)
 
 
-        self.main_layout_2.addWidget(self.groupBox_3)
+        self.verticalLayout_2.addWidget(self.groupBox_3)
 
-        self.groupBox = QGroupBox(self.centralwidget)
+        self.groupBox = QGroupBox(self.main_layout_2_frame)
         self.groupBox.setObjectName(u"groupBox")
-        sizePolicy3 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
-        sizePolicy3.setHorizontalStretch(0)
-        sizePolicy3.setVerticalStretch(0)
-        sizePolicy3.setHeightForWidth(self.groupBox.sizePolicy().hasHeightForWidth())
-        self.groupBox.setSizePolicy(sizePolicy3)
+        sizePolicy4 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        sizePolicy4.setHorizontalStretch(0)
+        sizePolicy4.setVerticalStretch(0)
+        sizePolicy4.setHeightForWidth(self.groupBox.sizePolicy().hasHeightForWidth())
+        self.groupBox.setSizePolicy(sizePolicy4)
         self.groupBox.setMinimumSize(QSize(250, 0))
         self.verticalLayout = QVBoxLayout(self.groupBox)
         self.verticalLayout.setObjectName(u"verticalLayout")
@@ -613,7 +303,10 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.output_text_edit)
 
 
-        self.main_layout_2.addWidget(self.groupBox)
+        self.verticalLayout_2.addWidget(self.groupBox)
+
+
+        self.main_layout_2.addWidget(self.main_layout_2_frame)
 
 
         self.main.addLayout(self.main_layout_2)
@@ -626,10 +319,16 @@ class Ui_MainWindow(object):
         self.toolbar = QHBoxLayout()
         self.toolbar.setObjectName(u"toolbar")
         self.toolbar.setSizeConstraint(QLayout.SetDefaultConstraint)
+        self.toolbar_frame = QFrame(self.centralwidget)
+        self.toolbar_frame.setObjectName(u"toolbar_frame")
+        self.toolbar_frame.setFrameShape(QFrame.StyledPanel)
+        self.toolbar_frame.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_4 = QHBoxLayout(self.toolbar_frame)
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
         self.toolbar_layout = QHBoxLayout()
         self.toolbar_layout.setObjectName(u"toolbar_layout")
         self.toolbar_layout.setContentsMargins(-1, -1, 0, -1)
-        self.fit = QPushButton(self.centralwidget)
+        self.fit = QPushButton(self.toolbar_frame)
         self.fit.setObjectName(u"fit")
         sizePolicy2.setHeightForWidth(self.fit.sizePolicy().hasHeightForWidth())
         self.fit.setSizePolicy(sizePolicy2)
@@ -639,7 +338,7 @@ class Ui_MainWindow(object):
 
         self.toolbar_layout.addWidget(self.fit)
 
-        self.zoom_out = QPushButton(self.centralwidget)
+        self.zoom_out = QPushButton(self.toolbar_frame)
         self.zoom_out.setObjectName(u"zoom_out")
         sizePolicy2.setHeightForWidth(self.zoom_out.sizePolicy().hasHeightForWidth())
         self.zoom_out.setSizePolicy(sizePolicy2)
@@ -649,7 +348,7 @@ class Ui_MainWindow(object):
 
         self.toolbar_layout.addWidget(self.zoom_out)
 
-        self.zoom_in = QPushButton(self.centralwidget)
+        self.zoom_in = QPushButton(self.toolbar_frame)
         self.zoom_in.setObjectName(u"zoom_in")
         sizePolicy2.setHeightForWidth(self.zoom_in.sizePolicy().hasHeightForWidth())
         self.zoom_in.setSizePolicy(sizePolicy2)
@@ -660,16 +359,19 @@ class Ui_MainWindow(object):
         self.toolbar_layout.addWidget(self.zoom_in)
 
 
-        self.toolbar.addLayout(self.toolbar_layout)
+        self.horizontalLayout_4.addLayout(self.toolbar_layout)
 
-        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer = QSpacerItem(443, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.toolbar.addItem(self.horizontalSpacer)
+        self.horizontalLayout_4.addItem(self.horizontalSpacer)
 
-        self.current_file_label = QLabel(self.centralwidget)
+        self.current_file_label = QLabel(self.toolbar_frame)
         self.current_file_label.setObjectName(u"current_file_label")
 
-        self.toolbar.addWidget(self.current_file_label)
+        self.horizontalLayout_4.addWidget(self.current_file_label)
+
+
+        self.toolbar.addWidget(self.toolbar_frame)
 
 
         self.verticalLayout_3.addLayout(self.toolbar)
@@ -749,7 +451,7 @@ class Ui_MainWindow(object):
 #if QT_CONFIG(tooltip)
         self.box_screenshot.setToolTip(QCoreApplication.translate("MainWindow", u"Draw a Box for Screenshot", None))
 #endif // QT_CONFIG(tooltip)
-        self.box_screenshot.setText(QCoreApplication.translate("MainWindow", u"Box Screenshot", None))
+        self.box_screenshot.setText(QCoreApplication.translate("MainWindow", u" Box Screenshot ", None))
         self.groupBox_3.setTitle(QCoreApplication.translate("MainWindow", u"Character Recognition", None))
 #if QT_CONFIG(tooltip)
         self.label.setToolTip(QCoreApplication.translate("MainWindow", u"Adjust the factor by which the image is resized. Larger values may improve OCR on high-resolution images. (default: 5).", None))

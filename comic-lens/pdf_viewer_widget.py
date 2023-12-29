@@ -21,6 +21,9 @@ class PDFViewer(QWidget):
         self.graphics_view = QGraphicsView(self)
         self.layout.addWidget(self.graphics_view)
 
+        # Set the style sheet to remove the border
+        self.graphics_view.setStyleSheet("border: none;")
+
         # Create a QGraphicsScene to hold the PDF page
         self.scene = QGraphicsScene(self)
         self.graphics_view.setScene(self.scene)

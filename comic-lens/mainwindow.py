@@ -17,8 +17,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         super().__init__()
         self.setupUi(self)
 
+        # Stylesheet
+        with open("stylesheet.qss", "r") as f:
+            self.setStyleSheet(f.read())
+
         # Create an instance of the PDFViewer class
         self.pdf_viewer = PDFViewer()
+        self.pdf_viewer.setObjectName("pdf_viewer")
         self.page_layout.addWidget(self.pdf_viewer)
 
         # Create an instance of the ScreenshotArea class

@@ -16,11 +16,11 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QIcon, QImage, QKeySequence, QLinearGradient,
     QPainter, QPalette, QPixmap, QRadialGradient,
     QTransform)
-from PySide6.QtWidgets import (QApplication, QComboBox, QGroupBox, QHBoxLayout,
-    QLabel, QLayout, QLineEdit, QMainWindow,
-    QMenu, QMenuBar, QPushButton, QSizePolicy,
-    QSlider, QSpacerItem, QSpinBox, QTextEdit,
-    QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QGroupBox,
+    QHBoxLayout, QLabel, QLayout, QLineEdit,
+    QMainWindow, QMenu, QMenuBar, QPushButton,
+    QSizePolicy, QSlider, QSpacerItem, QSpinBox,
+    QTextEdit, QVBoxLayout, QWidget)
 import resource_rc
 
 class Ui_MainWindow(object):
@@ -33,6 +33,7 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
         MainWindow.setSizePolicy(sizePolicy)
+        MainWindow.setStyleSheet(u"")
         self.actionOpen_PDF = QAction(MainWindow)
         self.actionOpen_PDF.setObjectName(u"actionOpen_PDF")
         self.actionZoom_In = QAction(MainWindow)
@@ -63,9 +64,12 @@ class Ui_MainWindow(object):
         self.centralwidget.setSizePolicy(sizePolicy1)
         self.centralwidget.setLayoutDirection(Qt.LeftToRight)
         self.verticalLayout_3 = QVBoxLayout(self.centralwidget)
+        self.verticalLayout_3.setSpacing(0)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
         self.main = QHBoxLayout()
         self.main.setObjectName(u"main")
+        self.main.setContentsMargins(11, -1, 0, -1)
         self.main_layout = QVBoxLayout()
         self.main_layout.setObjectName(u"main_layout")
         self.page_layout = QHBoxLayout()
@@ -153,12 +157,23 @@ class Ui_MainWindow(object):
         self.main_layout_2 = QVBoxLayout()
         self.main_layout_2.setObjectName(u"main_layout_2")
         self.main_layout_2.setSizeConstraint(QLayout.SetDefaultConstraint)
-        self.groupBox_2 = QGroupBox(self.centralwidget)
+        self.main_layout_2_frame = QFrame(self.centralwidget)
+        self.main_layout_2_frame.setObjectName(u"main_layout_2_frame")
+        self.main_layout_2_frame.setFrameShape(QFrame.StyledPanel)
+        self.main_layout_2_frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_2 = QVBoxLayout(self.main_layout_2_frame)
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.groupBox_2 = QGroupBox(self.main_layout_2_frame)
         self.groupBox_2.setObjectName(u"groupBox_2")
         self.horizontalLayout_2 = QHBoxLayout(self.groupBox_2)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.box_screenshot = QPushButton(self.groupBox_2)
         self.box_screenshot.setObjectName(u"box_screenshot")
+        sizePolicy3 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
+        sizePolicy3.setHorizontalStretch(0)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.box_screenshot.sizePolicy().hasHeightForWidth())
+        self.box_screenshot.setSizePolicy(sizePolicy3)
         icon4 = QIcon()
         icon4.addFile(u":/resources/bounding-box-circles.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.box_screenshot.setIcon(icon4)
@@ -171,9 +186,9 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.addItem(self.horizontalSpacer_4)
 
 
-        self.main_layout_2.addWidget(self.groupBox_2)
+        self.verticalLayout_2.addWidget(self.groupBox_2)
 
-        self.groupBox_3 = QGroupBox(self.centralwidget)
+        self.groupBox_3 = QGroupBox(self.main_layout_2_frame)
         self.groupBox_3.setObjectName(u"groupBox_3")
         self.verticalLayout_4 = QVBoxLayout(self.groupBox_3)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
@@ -233,15 +248,15 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.addLayout(self.horizontalLayout_3)
 
 
-        self.main_layout_2.addWidget(self.groupBox_3)
+        self.verticalLayout_2.addWidget(self.groupBox_3)
 
-        self.groupBox = QGroupBox(self.centralwidget)
+        self.groupBox = QGroupBox(self.main_layout_2_frame)
         self.groupBox.setObjectName(u"groupBox")
-        sizePolicy3 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
-        sizePolicy3.setHorizontalStretch(0)
-        sizePolicy3.setVerticalStretch(0)
-        sizePolicy3.setHeightForWidth(self.groupBox.sizePolicy().hasHeightForWidth())
-        self.groupBox.setSizePolicy(sizePolicy3)
+        sizePolicy4 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        sizePolicy4.setHorizontalStretch(0)
+        sizePolicy4.setVerticalStretch(0)
+        sizePolicy4.setHeightForWidth(self.groupBox.sizePolicy().hasHeightForWidth())
+        self.groupBox.setSizePolicy(sizePolicy4)
         self.groupBox.setMinimumSize(QSize(250, 0))
         self.verticalLayout = QVBoxLayout(self.groupBox)
         self.verticalLayout.setObjectName(u"verticalLayout")
@@ -288,7 +303,10 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.output_text_edit)
 
 
-        self.main_layout_2.addWidget(self.groupBox)
+        self.verticalLayout_2.addWidget(self.groupBox)
+
+
+        self.main_layout_2.addWidget(self.main_layout_2_frame)
 
 
         self.main.addLayout(self.main_layout_2)
@@ -301,10 +319,16 @@ class Ui_MainWindow(object):
         self.toolbar = QHBoxLayout()
         self.toolbar.setObjectName(u"toolbar")
         self.toolbar.setSizeConstraint(QLayout.SetDefaultConstraint)
+        self.toolbar_frame = QFrame(self.centralwidget)
+        self.toolbar_frame.setObjectName(u"toolbar_frame")
+        self.toolbar_frame.setFrameShape(QFrame.StyledPanel)
+        self.toolbar_frame.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_4 = QHBoxLayout(self.toolbar_frame)
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
         self.toolbar_layout = QHBoxLayout()
         self.toolbar_layout.setObjectName(u"toolbar_layout")
         self.toolbar_layout.setContentsMargins(-1, -1, 0, -1)
-        self.fit = QPushButton(self.centralwidget)
+        self.fit = QPushButton(self.toolbar_frame)
         self.fit.setObjectName(u"fit")
         sizePolicy2.setHeightForWidth(self.fit.sizePolicy().hasHeightForWidth())
         self.fit.setSizePolicy(sizePolicy2)
@@ -314,7 +338,7 @@ class Ui_MainWindow(object):
 
         self.toolbar_layout.addWidget(self.fit)
 
-        self.zoom_out = QPushButton(self.centralwidget)
+        self.zoom_out = QPushButton(self.toolbar_frame)
         self.zoom_out.setObjectName(u"zoom_out")
         sizePolicy2.setHeightForWidth(self.zoom_out.sizePolicy().hasHeightForWidth())
         self.zoom_out.setSizePolicy(sizePolicy2)
@@ -324,7 +348,7 @@ class Ui_MainWindow(object):
 
         self.toolbar_layout.addWidget(self.zoom_out)
 
-        self.zoom_in = QPushButton(self.centralwidget)
+        self.zoom_in = QPushButton(self.toolbar_frame)
         self.zoom_in.setObjectName(u"zoom_in")
         sizePolicy2.setHeightForWidth(self.zoom_in.sizePolicy().hasHeightForWidth())
         self.zoom_in.setSizePolicy(sizePolicy2)
@@ -335,16 +359,19 @@ class Ui_MainWindow(object):
         self.toolbar_layout.addWidget(self.zoom_in)
 
 
-        self.toolbar.addLayout(self.toolbar_layout)
+        self.horizontalLayout_4.addLayout(self.toolbar_layout)
 
-        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer = QSpacerItem(443, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.toolbar.addItem(self.horizontalSpacer)
+        self.horizontalLayout_4.addItem(self.horizontalSpacer)
 
-        self.current_file_label = QLabel(self.centralwidget)
+        self.current_file_label = QLabel(self.toolbar_frame)
         self.current_file_label.setObjectName(u"current_file_label")
 
-        self.toolbar.addWidget(self.current_file_label)
+        self.horizontalLayout_4.addWidget(self.current_file_label)
+
+
+        self.toolbar.addWidget(self.toolbar_frame)
 
 
         self.verticalLayout_3.addLayout(self.toolbar)
@@ -424,7 +451,7 @@ class Ui_MainWindow(object):
 #if QT_CONFIG(tooltip)
         self.box_screenshot.setToolTip(QCoreApplication.translate("MainWindow", u"Draw a Box for Screenshot", None))
 #endif // QT_CONFIG(tooltip)
-        self.box_screenshot.setText(QCoreApplication.translate("MainWindow", u"Box Screenshot", None))
+        self.box_screenshot.setText(QCoreApplication.translate("MainWindow", u" Box Screenshot ", None))
         self.groupBox_3.setTitle(QCoreApplication.translate("MainWindow", u"Character Recognition", None))
 #if QT_CONFIG(tooltip)
         self.label.setToolTip(QCoreApplication.translate("MainWindow", u"Adjust the factor by which the image is resized. Larger values may improve OCR on high-resolution images. (default: 5).", None))
