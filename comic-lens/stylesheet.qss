@@ -51,7 +51,7 @@ QGroupBox
 /* QTextEdit */
 QTextEdit
 {
-    background-color: transparent
+    background-color: #403f4c
 }
 
 /* QLineEdit */
