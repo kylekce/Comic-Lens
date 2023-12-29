@@ -53,7 +53,7 @@ QTextEdit
 
 QLineEdit
 {
-    border: 1px
+    border: 1px solid bl
 }
 
 
