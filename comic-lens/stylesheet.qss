@@ -112,6 +112,8 @@ QPushButton::pressed
     border: none;
 }
 
+QPushButton::
+
 
 
 /*QCheckBox*/
