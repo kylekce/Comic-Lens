@@ -36,7 +36,10 @@ QMenuBar
 }
 
 /* QMenu */
-QMenu::h
+QMenu::hover
+{
+    
+}
 
 /* QLabel */
 QLabel
