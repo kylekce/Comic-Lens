@@ -48,7 +48,7 @@ QGroupBox
     /* border: 1px solid #403f4c */
 }
 
-QSpinBox
+/* QSpinBox */
 
 /* QTextEdit */
 QTextEdit
