@@ -135,14 +135,6 @@ QListView
 }
 
 
-QListView::disabled 
-{
-	background-color: #656565;
-    border: 1px solid #656565;
-
-}
-
-
 QListView::item 
 {
     padding: 1px;
