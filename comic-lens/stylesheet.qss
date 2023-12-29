@@ -81,7 +81,7 @@ QPushButton
     background-color: #41cd52;
     border: none;
     border-radius : 13px;
-	padding: 7px;
+	padding: 5px;
 }
 
 
