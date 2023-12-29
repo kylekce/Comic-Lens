@@ -86,7 +86,7 @@ QSlider::handle
 {
     background: #41cd52
 }
-QSlider::
+QSlider::up-
 
 /*QPushButton*/
 QPushButton
