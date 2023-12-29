@@ -36,6 +36,7 @@ QMenuBar
 }
 
 /* QMenu */
+QMenu
 
 /* QLabel */
 QLabel
