@@ -34,12 +34,6 @@ QMenuBar
     background-color: #141414;
 }
 
-/* QMenu */
-#menuAbout
-{
-    background-color: #41cd52
-}
-
 /* QLabel */
 QLabel
 {
