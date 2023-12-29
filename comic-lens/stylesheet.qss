@@ -38,7 +38,7 @@ QLabel
     background-color: transparent;
 }
 
-/*  */
+/* QGroupBox */
 
 /*QPushButton*/
 QPushButton
