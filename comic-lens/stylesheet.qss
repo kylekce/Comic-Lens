@@ -41,7 +41,7 @@ QLabel
 /* QGroupBox */
 QGroupBox
 {
-    background-color: #141414
+    background-color: transparent
 }
 
 /*QPushButton*/
