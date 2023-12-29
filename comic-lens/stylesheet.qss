@@ -35,7 +35,7 @@ QMenuBar
 }
 
 /* QMenu */
-QMenu
+QWidget
 {
     background-color: #41cd52
 }
