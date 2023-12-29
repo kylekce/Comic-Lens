@@ -93,6 +93,7 @@ QSlider
 QPushButton
 {
     background-color: #41cd52;
+    color: #000000;
     border-radius : 7px;
 	padding: 5px;
 }
@@ -101,7 +102,6 @@ QPushButton
 QPushButton::hover
 {
     background-color: #f2e9e4;
-    color: #000000;
     border: none;
 }
 

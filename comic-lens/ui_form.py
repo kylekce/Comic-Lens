@@ -190,6 +190,10 @@ class Ui_MainWindow(object):
         sizePolicy3.setVerticalStretch(0)
         sizePolicy3.setHeightForWidth(self.box_screenshot.sizePolicy().hasHeightForWidth())
         self.box_screenshot.setSizePolicy(sizePolicy3)
+        font2 = QFont()
+        font2.setFamilies([u"Verdana"])
+        font2.setBold(True)
+        self.box_screenshot.setFont(font2)
         icon4 = QIcon()
         icon4.addFile(u":/resources/bounding-box-circles.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.box_screenshot.setIcon(icon4)
@@ -298,6 +302,7 @@ class Ui_MainWindow(object):
 
         self.translate_button = QPushButton(self.groupBox)
         self.translate_button.setObjectName(u"translate_button")
+        self.translate_button.setFont(font2)
         icon5 = QIcon()
         icon5.addFile(u":/resources/caret-down-fill.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.translate_button.setIcon(icon5)
