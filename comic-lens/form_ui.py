@@ -75,16 +75,22 @@ class Ui_MainWindow(object):
         self.main.setContentsMargins(0, -1, 0, -1)
         self.main_layout = QVBoxLayout()
         self.main_layout.setObjectName(u"main_layout")
+        self.main_layout_frame = QFrame(self.centralwidget)
+        self.main_layout_frame.setObjectName(u"main_layout_frame")
+        self.main_layout_frame.setFrameShape(QFrame.StyledPanel)
+        self.main_layout_frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_5 = QVBoxLayout(self.main_layout_frame)
+        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
         self.page_layout = QHBoxLayout()
         self.page_layout.setObjectName(u"page_layout")
         self.page_layout.setSizeConstraint(QLayout.SetDefaultConstraint)
 
-        self.main_layout.addLayout(self.page_layout)
+        self.verticalLayout_5.addLayout(self.page_layout)
 
         self.page_navigation = QHBoxLayout()
         self.page_navigation.setObjectName(u"page_navigation")
         self.page_navigation.setContentsMargins(0, -1, -1, 0)
-        self.page_navigation_frame = QFrame(self.centralwidget)
+        self.page_navigation_frame = QFrame(self.main_layout_frame)
         self.page_navigation_frame.setObjectName(u"page_navigation_frame")
         self.page_navigation_frame.setFrameShape(QFrame.StyledPanel)
         self.page_navigation_frame.setFrameShadow(QFrame.Raised)
@@ -160,9 +166,12 @@ class Ui_MainWindow(object):
         self.page_navigation.addWidget(self.page_navigation_frame)
 
 
-        self.main_layout.addLayout(self.page_navigation)
+        self.verticalLayout_5.addLayout(self.page_navigation)
 
-        self.main_layout.setStretch(0, 1)
+        self.verticalLayout_5.setStretch(0, 1)
+
+        self.main_layout.addWidget(self.main_layout_frame)
+
 
         self.main.addLayout(self.main_layout)
 
