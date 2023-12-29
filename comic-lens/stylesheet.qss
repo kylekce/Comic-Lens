@@ -60,7 +60,7 @@ QComboBox
 /* QTextEdit */
 QTextEdit
 {
-    color: #
+    color: #ffffff
     background-color: #393939;
     border: none;
     border-radius: 5px;
