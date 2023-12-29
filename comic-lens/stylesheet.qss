@@ -1,6 +1,5 @@
 /* ALl */
 * {
-    font-family: "Segoe UI", sans-serif;
     color: #f2e9e4;
     background-color: #343434;
 }
