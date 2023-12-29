@@ -187,7 +187,7 @@ QListView::item:alternate
 
 QListView::item:selected 
 {
-    border: 1px solid #6a6ea9;
+    border: 1px solid #41cd52;
     border: none;
 
 }
