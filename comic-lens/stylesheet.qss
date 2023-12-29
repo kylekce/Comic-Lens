@@ -111,7 +111,7 @@ QPushButton::checked
     background-color: #f2e9e4;
     border: none;
 }
-W
+
 
 /*QListView*/
 QListView 
