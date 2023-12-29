@@ -27,7 +27,7 @@ QFrame#page_navigation_frame
 }
 
 /* pdf_viewer */
-QFrame#pdf_viewer
+QFr#pdf_viewer
 {
     background-color: #343434;
 }
