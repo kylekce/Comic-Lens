@@ -55,6 +55,7 @@ QSpinBox
 }
 
 
+
 /* QTextEdit */
 QTextEdit
 {
