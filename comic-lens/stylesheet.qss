@@ -38,7 +38,7 @@ QMenuBar
 /* QMenu */
 QMenu::hover
 {
-    
+    background-color:
 }
 
 /* QLabel */
