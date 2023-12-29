@@ -57,7 +57,9 @@ QSpinBox
 /* QComboBox */
 QComboBox
 {
-    
+    background-color: #403f4c;
+    border: none;
+    border-radius: 5px;
 }
 
 /* QTextEdit */
