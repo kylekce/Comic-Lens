@@ -41,7 +41,7 @@ QLabel
 /* QGroupBox */
 QGroupBox
 {
-    bac
+    background
 }
 
 /*QPushButton*/
