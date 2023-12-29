@@ -112,7 +112,7 @@ QPushButton::pressed
     border: none;
 }
 
-QPushButton::dh
+QPushButton::ch
 {
     background-color: #f2e9e4;
     border: none;
