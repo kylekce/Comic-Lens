@@ -41,8 +41,8 @@ QLabel
 /* QGroupBox */
 QGroupBox
 {
-    background-color: transparent
-    border
+    background-color: transparent;
+    border-colo
 }
 
 /* QTextEdit */
