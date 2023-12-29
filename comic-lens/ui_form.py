@@ -460,7 +460,7 @@ class Ui_MainWindow(object):
 #if QT_CONFIG(tooltip)
         self.box_screenshot.setToolTip(QCoreApplication.translate("MainWindow", u"Draw a Box for Screenshot", None))
 #endif // QT_CONFIG(tooltip)
-        self.box_screenshot.setText(QCoreApplication.translate("MainWindow", u" Box Screenshot ", None))
+        self.box_screenshot.setText(QCoreApplication.translate("MainWindow", u" Box Screenshot", None))
         self.groupBox_3.setTitle(QCoreApplication.translate("MainWindow", u"Character Recognition", None))
 #if QT_CONFIG(tooltip)
         self.label.setToolTip(QCoreApplication.translate("MainWindow", u"Adjust the factor by which the image is resized. Larger values may improve OCR on high-resolution images. (default: 5).", None))

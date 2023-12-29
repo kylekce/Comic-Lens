@@ -262,7 +262,7 @@
                  <string>Draw a Box for Screenshot</string>
                 </property>
                 <property name="text">
-                 <string> Box Screenshot </string>
+                 <string> Box Screenshot</string>
                 </property>
                 <property name="icon">
                  <iconset resource="resource.qrc">

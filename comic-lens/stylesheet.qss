@@ -88,18 +88,12 @@ QPushButton
 QPushButton::hover
 {
     background-color: #f2e9e4;
-    border: none;
-    border-radius : 0px;
-    font: bold 12px;
 }
 
 
 QPushButton::pressed
 {
     background-color: #f2e9e4;
-    border: none;
-    border-radius : 0px;
-    font: bold 12px;
 }
 
 
