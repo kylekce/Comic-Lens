@@ -33,6 +33,9 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
         MainWindow.setSizePolicy(sizePolicy)
+        font = QFont()
+        font.setFamilies([u"HelveticaNowText Medium"])
+        MainWindow.setFont(font)
         MainWindow.setStyleSheet(u"")
         self.actionOpen_PDF = QAction(MainWindow)
         self.actionOpen_PDF.setObjectName(u"actionOpen_PDF")
@@ -87,7 +90,7 @@ class Ui_MainWindow(object):
         self.page_navigation_frame.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_5 = QHBoxLayout(self.page_navigation_frame)
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
-        self.horizontalSpacer_3 = QSpacerItem(108, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer_3 = QSpacerItem(107, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout_5.addItem(self.horizontalSpacer_3)
 
@@ -149,7 +152,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_5.addWidget(self.last_page)
 
-        self.horizontalSpacer_2 = QSpacerItem(107, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer_2 = QSpacerItem(106, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout_5.addItem(self.horizontalSpacer_2)
 
@@ -174,6 +177,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.groupBox_2 = QGroupBox(self.main_layout_2_frame)
         self.groupBox_2.setObjectName(u"groupBox_2")
+        font1 = QFont()
+        font1.setFamilies([u"HelveticaNowText Medium"])
+        font1.setBold(False)
+        self.groupBox_2.setFont(font1)
         self.horizontalLayout_2 = QHBoxLayout(self.groupBox_2)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.box_screenshot = QPushButton(self.groupBox_2)
@@ -199,6 +206,7 @@ class Ui_MainWindow(object):
 
         self.groupBox_3 = QGroupBox(self.main_layout_2_frame)
         self.groupBox_3.setObjectName(u"groupBox_3")
+        self.groupBox_3.setFont(font1)
         self.verticalLayout_4 = QVBoxLayout(self.groupBox_3)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.label = QLabel(self.groupBox_3)
@@ -267,6 +275,7 @@ class Ui_MainWindow(object):
         sizePolicy4.setHeightForWidth(self.groupBox.sizePolicy().hasHeightForWidth())
         self.groupBox.setSizePolicy(sizePolicy4)
         self.groupBox.setMinimumSize(QSize(250, 0))
+        self.groupBox.setFont(font1)
         self.verticalLayout = QVBoxLayout(self.groupBox)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.input_combo_box = QComboBox(self.groupBox)
@@ -389,7 +398,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 766, 25))
+        self.menubar.setGeometry(QRect(0, 0, 766, 20))
         self.menuFile = QMenu(self.menubar)
         self.menuFile.setObjectName(u"menuFile")
         self.menuAbout = QMenu(self.menubar)
