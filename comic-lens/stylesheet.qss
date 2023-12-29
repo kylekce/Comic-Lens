@@ -135,7 +135,7 @@ QListView
 }
 
 
-/* QListView::item 
+QListView::item 
 {
     padding: 1px;
 
@@ -177,7 +177,7 @@ QListView::item:hover {
     background-color: #262626;
     border: none;
 
-} */
+}
 
 
 /*QScrollBar*/
