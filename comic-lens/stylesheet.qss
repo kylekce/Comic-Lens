@@ -34,6 +34,10 @@ QMenuBar
 {
     background-color: #141414;
 }
+QMenu::hover
+{
+    background-color: #41cd52
+}
 
 /* QLabel */
 QLabel
@@ -56,7 +60,7 @@ QSpinBox
 /* QComboBox */
 QComboBox
 {
-    background-color: #41cd52;
+    background-color: #403f4c;
     border: none;
 }
 
