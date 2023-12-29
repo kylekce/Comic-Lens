@@ -51,6 +51,10 @@ QTextEdit
     background-color: #141414
 }
 
+QLineEdit
+{
+    
+}
 
 
 /*QPushButton*/
