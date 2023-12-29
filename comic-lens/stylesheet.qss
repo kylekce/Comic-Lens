@@ -28,13 +28,6 @@ QFrame#pdf_viewer
     background-color: #343434;
 }
 
-/* QMenuBar */
-QMenuBar
-{
-    /* background-color: #141414; */
-    /* color: #000000; */
-}
-
 /* QLabel */
 QLabel
 {
