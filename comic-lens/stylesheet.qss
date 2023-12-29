@@ -141,7 +141,6 @@ QListView::item
 
 }
 
-
 QListView::item:alternate 
 {
     background-color: #4a4b4d;
