@@ -59,7 +59,7 @@ QSpinBox
 QTextEdit
 {
     background-color: #403f4c;
-    border: none
+    border: none;
     border-radius:
 }
 
