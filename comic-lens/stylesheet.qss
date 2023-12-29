@@ -21,7 +21,6 @@ QFrame#page_navigation_frame
     background-color: #141414;
     border: 3px solid #403f4c;
     border-radius: 25;  
-    border-right: 0px;
 }
 
 /* pdf_viewer */
