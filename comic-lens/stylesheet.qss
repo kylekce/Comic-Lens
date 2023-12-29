@@ -8,17 +8,17 @@
 /*QFrame*/
 QFrame#toolbar_frame
 {
-    background-color: #141414;
+    background-color: #403f4c;
 }
 QFrame#main_layout_2_frame
 {
-    background-color: #141414;
+    background-color: #403f4c;
     border: 3px solid #403f4c;
     border-right: none;
 }
 QFrame#page_navigation_frame
 {
-    background-color: #141414;
+    background-color: #403f4c;
     border: 7px solid #403f4c;
     border-radius: 29;  
 }
@@ -32,7 +32,7 @@ QFrame#pdf_viewer
 /* QMenuBar */
 QMenuBar
 {
-    background-color: #141414;
+    background-color: #403f4c;
 }
 
 /* QLabel */
