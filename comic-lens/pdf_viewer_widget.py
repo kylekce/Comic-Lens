@@ -21,8 +21,8 @@ class PDFViewer(QWidget):
         self.graphics_view = QGraphicsView(self)
         self.layout.addWidget(self.graphics_view)
 
-        # Set the style sheet to remove the border
-        self.graphics_view.setStyleSheet("border: none;")
+        # Set the style sheet
+        self.graphics_view.setStyleSheet("border: none; background-color: #343434")
 
         # Create a QGraphicsScene to hold the PDF page
         self.scene = QGraphicsScene(self)
@@ -112,41 +112,53 @@ class PDFViewer(QWidget):
 
     def next_page(self, line_edit):
         """Go to the next page"""
-        if self.page.number + 1 < self.document.page_count:
-            self.page = self.document[self.page.number + 1]
-            pixmap = self.render_page()
-            self.display_page(pixmap)
+        try:
+            if self.page.number + 1 < self.document.page_count:
+                self.page = self.document[self.page.number + 1]
+                pixmap = self.render_page()
+                self.display_page(pixmap)
 
-        # Update the page line edit
-        self.change_page_line_edit(line_edit)
+            # Update the page line edit
+            self.change_page_line_edit(line_edit)
+        except AttributeError:
+            pass
 
     def previous_page(self, line_edit):
         """Go to the previous page"""
-        if self.page.number > 0:
-            self.page = self.document[self.page.number - 1]
-            pixmap = self.render_page()
-            self.display_page(pixmap)
+        try:
+            if self.page.number > 0:
+                self.page = self.document[self.page.number - 1]
+                pixmap = self.render_page()
+                self.display_page(pixmap)
 
-        # Update the page line edit
-        self.change_page_line_edit(line_edit)
+            # Update the page line edit
+            self.change_page_line_edit(line_edit)
+        except AttributeError:
+            pass
 
     def start_page(self, line_edit):
         """Go to the start page"""
-        self.page = self.document[0]
-        pixmap = self.render_page()
-        self.display_page(pixmap)
+        try:
+            self.page = self.document[0]
+            pixmap = self.render_page()
+            self.display_page(pixmap)
 
-        # Update the page line edit
-        self.change_page_line_edit(line_edit)
+            # Update the page line edit
+            self.change_page_line_edit(line_edit)
+        except (AttributeError, TypeError):
+            pass
 
     def last_page(self, line_edit):
         """Go to the last page"""
-        self.page = self.document[self.document.page_count - 1]
-        pixmap = self.render_page()
-        self.display_page(pixmap)
+        try:
+            self.page = self.document[self.document.page_count - 1]
+            pixmap = self.render_page()
+            self.display_page(pixmap)
 
-        # Update the page line edit
-        self.change_page_line_edit(line_edit)
+            # Update the page line edit
+            self.change_page_line_edit(line_edit)
+        except AttributeError:
+            pass
 
     def page_line_edit_return_pressed(self, page_number):
         """Go to the page number entered in the line edit"""

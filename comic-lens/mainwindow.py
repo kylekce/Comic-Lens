@@ -23,7 +23,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         # Create an instance of the PDFViewer class
         self.pdf_viewer = PDFViewer()
-        self.pdf_viewer.setObjectName("pdf_viewer")
         self.page_layout.addWidget(self.pdf_viewer)
 
         # Create an instance of the ScreenshotArea class

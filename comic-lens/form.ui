@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>766</width>
+    <width>796</width>
     <height>723</height>
    </rect>
   </property>
@@ -303,10 +303,10 @@
                  </font>
                 </property>
                 <property name="toolTip">
-                 <string>Draw a Box for Screenshot</string>
+                 <string>Draw a box to select a character or text</string>
                 </property>
                 <property name="text">
-                 <string> Box Screenshot</string>
+                 <string> Box</string>
                 </property>
                 <property name="icon">
                  <iconset resource="resource.qrc">
@@ -348,7 +348,7 @@
               <item>
                <widget class="QLabel" name="label">
                 <property name="toolTip">
-                 <string>Adjust the factor by which the image is resized. Larger values may improve OCR on high-resolution images. (default: 5).</string>
+                 <string/>
                 </property>
                 <property name="text">
                  <string>Resize Factor</string>
@@ -360,7 +360,7 @@
                 <item>
                  <widget class="QSlider" name="resize_factor_slider">
                   <property name="toolTip">
-                   <string>Adjust the factor by which the image is resized. Larger values may improve OCR on high-resolution images. (default: 5).</string>
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adjust the factor by which the image is resized&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                   </property>
                   <property name="minimum">
                    <number>1</number>
@@ -378,6 +378,9 @@
                 </item>
                 <item>
                  <widget class="QSpinBox" name="resize_factor_box">
+                  <property name="specialValueText">
+                   <string/>
+                  </property>
                   <property name="minimum">
                    <number>1</number>
                   </property>
@@ -397,7 +400,7 @@
               <item>
                <widget class="QLabel" name="label_2">
                 <property name="toolTip">
-                 <string>Adjust the kernel size for median blur. This controls the degree of smoothing applied to the image. (default: 5).</string>
+                 <string/>
                 </property>
                 <property name="text">
                  <string>Median Blur</string>
@@ -409,7 +412,7 @@
                 <item>
                  <widget class="QSlider" name="median_blur_slider">
                   <property name="toolTip">
-                   <string>Adjust the kernel size for median blur. This controls the degree of smoothing applied to the image. (default: 5).</string>
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adjust the kernel size for median blur&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                   </property>
                   <property name="minimum">
                    <number>1</number>
@@ -702,7 +705,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>766</width>
+     <width>796</width>
      <height>23</height>
     </rect>
    </property>

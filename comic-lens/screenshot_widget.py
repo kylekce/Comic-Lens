@@ -177,13 +177,30 @@ class ScreenshotArea(QWidget):
                 self.input_text, self.output_language, self.input_language
             )
 
+            # TODO: Disable the read only mode
+
+            # Set the style sheet
+            self.input_text_edit.setStyleSheet("color: #e0d7d2;")
+
             self.output_text_edit.setText(self.output_text)
 
-        except TypeError:
-            self.input_text_edit.setText("Character or text not found.")
+        except (TypeError, AttributeError):
+            # TODO: Enable the read only mode
+
+            # Set the style sheet
+            self.input_text_edit.setStyleSheet("color: red;")
+
+            self.input_text_edit.setText(
+                "Character or text not found in the selection."
+            )
             self.output_text_edit.setText("")
         except Exception as e:
-            self.input_text_edit.setText(f"Something went wrong: \n\n{e}")
+            # Set the style sheet
+            self.input_text_edit.setStyleSheet("color: red;")
+
+            # TODO: Enable the read only mode
+
+            self.input_text_edit.setText(f"Something went wrong.\n\n{e}")
             self.output_text_edit.setText("")
 
     def lang_ocr_translate(self):

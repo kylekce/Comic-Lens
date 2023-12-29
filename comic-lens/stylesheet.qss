@@ -1,13 +1,8 @@
-/* ALl */
-* {
-    /* color: #e0d7d2; */
-    /* background-color: #343434; */
-}
-
 /*QFrame*/
 QFrame#toolbar_frame
 {
     background-color: #141414;
+    border-top: 3px solid black;
 }
 QFrame#main_layout_frame
 {
@@ -16,8 +11,9 @@ QFrame#main_layout_frame
 QFrame#main_layout_2_frame
 {
     background-color: #141414;
-    border: 3px solid #343434;
+    border: 3px solid black;
     border-right: none;
+    border-bottom: none
 }
 QFrame#page_navigation_frame
 {
@@ -98,20 +94,20 @@ QPushButton
 QPushButton::hover
 {
     background-color: #f2e9e4;
-    border: none;
+    border: 1px solid;
 }
 
 
 QPushButton::pressed
 {
     background-color: #f2e9e4;
-    border: none;
+    border: 2px solid;
 }
 
 QPushButton::checked
 {
     background-color: #f2e9e4;
-    border: none;
+    border: 1px solid;
 }
 
 
@@ -129,8 +125,8 @@ QListView
 
 QListView::item 
 {
+    color: #f2e9e4;
     padding: 1px;
-
 }
 
 QListView::item:alternate 
