@@ -100,7 +100,7 @@ QPushButton::hover
 
 QPushButton::pressed
 {
-    background-color: #f2e9e4;
+    /* background-color: #f2e9e4; */
 }
 
 
