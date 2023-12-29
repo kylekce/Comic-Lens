@@ -19,7 +19,10 @@ QFrame#main_layout_2_frame
     border: 3px solid #1f1f1f;
     border-right: 0px;
 }
-QFrame#
+QFrame#page_navigation_frame
+{
+    
+}
 
 /* pdf_viewer */
 QFrame#pdf_viewer
