@@ -20,6 +20,7 @@ QFrame#main_layout_2_frame
     border-right: 0px;
 }
 
+
 /* pdf_viewer */
 QFrame#pdf_viewer
 {
