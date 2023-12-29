@@ -49,6 +49,11 @@ QGroupBox
 }
 
 /* QSpinBox */
+QSpinBox
+{
+    
+}
+
 
 /* QTextEdit */
 QTextEdit
