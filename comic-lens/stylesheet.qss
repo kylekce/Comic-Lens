@@ -60,7 +60,7 @@ QLineEdit
     border: 1px solid transparent
 }
 
-QSlider
+/* QSlider */
 
 /*QPushButton*/
 QPushButton
