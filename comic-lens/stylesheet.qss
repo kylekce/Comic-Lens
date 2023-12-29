@@ -19,7 +19,6 @@ QFrame#main_layout_2_frame
 QFrame#page_navigation_frame
 {
     background-color: #141414;
-    border: 3px solid #403f4c;
     border-radius: 25;  
 }
 
