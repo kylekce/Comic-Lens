@@ -63,7 +63,7 @@ QLineEdit
 /* QSlider */
 QSlider
 {
-    background
+    background: transparent
 }
 
 /*QPushButton*/
