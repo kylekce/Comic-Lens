@@ -16,6 +16,7 @@ QFrame#toolbar_frame
 QFrame#main_layout_2_frame
 {
     background-color: #141414;
+    border: 3px solid #1f1f1f;
     border-right: 0px;
 }
 QFrame#page_navigation_frame
