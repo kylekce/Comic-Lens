@@ -32,6 +32,7 @@ QFrame#pdf_viewer
 QMenuBar
 {
     background-color: #141414;
+    color:
 }
 
 /* QLabel */
