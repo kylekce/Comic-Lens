@@ -1,0 +1,322 @@
+/* ALl */
+* {
+    font-family: "Segoe UI", sans-serif;
+    color: #f2e9e4;
+    background-color: #1f1f1f;
+}
+
+
+
+
+/*QFrame*/
+QFrame#toolbar_frame
+{
+    background-color: #141414;
+}
+QFrame#main_layout_2_frame
+{
+    background-color: #141414;
+    border: 3px solid #1f1f1f;
+    border-right: 0px;
+}
+
+/* pdf_viewer */
+QFrame#pdf_viewer
+{
+    background-color: #403f4c;
+}
+
+/* QMenuBar */
+QMenuBar
+{
+    background-color: #141414;
+}
+
+/* QLabel */
+QLabel
+{
+    background-color: transparent;
+}
+
+/* QGroupBox */
+QGroupBox
+{
+    background-color: transparent
+}
+
+/* QTextEdit */
+QTextEdit
+{
+    background-color: #141414
+}
+
+/*QPushButton*/
+QPushButton
+{
+    background-color: transparent;
+    border: none;
+    border-radius : 0px;
+	padding: 5px;
+}
+
+
+QPushButton::hover
+{
+    background-color: rgb(79, 79, 79);
+    border: none;
+    border-radius : 0px;
+    font: bold 12px;
+}
+
+
+QPushButton::pressed
+{
+    background-color: #b4b4b4;
+    border: none;
+    border-radius : 0px;
+    font: bold 12px;
+}
+
+
+/*QCheckBox*/
+QCheckBox
+{
+	background-color: transparent;
+	font-weight: bold;
+}
+
+
+QCheckBox::indicator
+{
+    background-color: #000;
+    border: 1px solid #41cd52;
+    width: 12px;
+    height: 12px;
+
+}
+
+
+QCheckBox::indicator:checked
+{
+    image:url("./ressources/check.png"); /*To replace*/
+	background-color: #1f2b2b;
+    border: 1px solid #41cd52;
+
+}
+
+
+QCheckBox::indicator:unchecked:hover
+{
+    border: 1px solid #41cd52;
+
+}
+
+
+QCheckBox::disabled
+{
+
+}
+
+
+QCheckBox::indicator:disabled
+{
+	background-color: #656565;
+    border: 1px solid #656565;
+
+}
+
+
+/*QListView*/
+QListView 
+{
+    border : none;
+    background-color: #343434;
+    show-decoration-selected: 1; /* make the selection span the entire width of the view */
+    outline: 0;
+	border: 1px solid gray;
+
+}
+
+
+QListView::disabled 
+{
+	background-color: #656565;
+    border: 1px solid #656565;
+
+}
+
+
+QListView::item 
+{
+    padding: 1px;
+
+}
+
+
+QListView::item:alternate 
+{
+    background-color: #4a4b4d;
+
+}
+
+
+QListView::item:selected 
+{
+    border: 1px solid #6a6ea9;
+    border: none;
+
+}
+
+
+QListView::item:selected:!active 
+{
+    background-color: #41cd52;
+    border: none;
+
+}
+
+
+QListView::item:selected:active 
+{
+    background-color: #41cd52;
+    border: none;
+
+}
+
+
+QListView::item:hover {
+    background-color: #262626;
+    border: none;
+
+}
+
+
+/*QScrollBar*/
+QScrollBar:horizontal
+{
+    border: 1px solid #222222;
+    background-color: #3d3d3d;
+    height: 15px;
+    margin: 0px 16px 0 16px;
+
+}
+
+
+QScrollBar::handle:horizontal
+{
+    background-color: #41cd52;
+    min-height: 20px;
+
+}
+
+
+QScrollBar::add-line:horizontal
+{
+    border: 1px solid #1b1b19;
+    background-color: #41cd52;
+    width: 14px;
+    subcontrol-position: right;
+    subcontrol-origin: margin;
+
+}
+
+
+QScrollBar::sub-line:horizontal
+{
+    border: 1px solid #1b1b19;
+    background-color: #41cd52;
+    width: 14px;
+    subcontrol-position: left;
+    subcontrol-origin: margin;
+
+}
+
+
+QScrollBar::right-arrow:horizontal
+{
+    image: url(://arrow-right.png);
+    width: 6px;
+    height: 6px;
+
+}
+
+
+QScrollBar::left-arrow:horizontal
+{
+    image: url(://arrow-left.png);
+    width: 6px;
+    height: 6px;
+
+}
+
+
+QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal
+{
+    background: none;
+
+}
+
+
+QScrollBar:vertical
+{
+    background-color: #3d3d3d;
+    width: 13px;
+    margin: 16px 0 16px 0;
+    border: 1px solid #222222;
+
+}
+
+
+QScrollBar::handle:vertical
+{
+    background-color: #41cd52;
+    min-height: 20px;
+
+}
+
+
+QScrollBar::add-line:vertical
+{
+    border: 1px solid #1b1b19;
+    background-color: #41cd52;
+    height: 14px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+
+}
+
+
+QScrollBar::sub-line:vertical
+{
+    border: 1px solid #41cd52;
+    background-color: #41cd52;
+    height: 14px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+
+}
+
+
+QScrollBar::up-arrow:vertical
+{
+    image: url(://arrow-up.png);
+    width: 6px;
+    height: 6px;
+
+}
+
+
+QScrollBar::down-arrow:vertical
+{
+    image: url(://arrow-down.png);
+    width: 6px;
+    height: 6px;
+
+}
+
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical
+{
+    background-color: none;
+
+}
