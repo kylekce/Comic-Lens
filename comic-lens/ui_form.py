@@ -27,7 +27,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(733, 723)
+        MainWindow.resize(766, 723)
         sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -81,11 +81,17 @@ class Ui_MainWindow(object):
         self.page_navigation = QHBoxLayout()
         self.page_navigation.setObjectName(u"page_navigation")
         self.page_navigation.setContentsMargins(0, -1, -1, -1)
-        self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.page_navigation_frame = QFrame(self.centralwidget)
+        self.page_navigation_frame.setObjectName(u"page_navigation_frame")
+        self.page_navigation_frame.setFrameShape(QFrame.StyledPanel)
+        self.page_navigation_frame.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_5 = QHBoxLayout(self.page_navigation_frame)
+        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
+        self.horizontalSpacer_3 = QSpacerItem(103, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.page_navigation.addItem(self.horizontalSpacer_3)
+        self.horizontalLayout_5.addItem(self.horizontalSpacer_3)
 
-        self.start_page = QPushButton(self.centralwidget)
+        self.start_page = QPushButton(self.page_navigation_frame)
         self.start_page.setObjectName(u"start_page")
         sizePolicy2 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
         sizePolicy2.setHorizontalStretch(0)
@@ -96,9 +102,9 @@ class Ui_MainWindow(object):
         icon.addFile(u":/resources/skip-start-fill.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.start_page.setIcon(icon)
 
-        self.page_navigation.addWidget(self.start_page)
+        self.horizontalLayout_5.addWidget(self.start_page)
 
-        self.previous_page = QPushButton(self.centralwidget)
+        self.previous_page = QPushButton(self.page_navigation_frame)
         self.previous_page.setObjectName(u"previous_page")
         sizePolicy2.setHeightForWidth(self.previous_page.sizePolicy().hasHeightForWidth())
         self.previous_page.setSizePolicy(sizePolicy2)
@@ -106,9 +112,9 @@ class Ui_MainWindow(object):
         icon1.addFile(u":/resources/caret-left-fill.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.previous_page.setIcon(icon1)
 
-        self.page_navigation.addWidget(self.previous_page)
+        self.horizontalLayout_5.addWidget(self.previous_page)
 
-        self.page_line_edit = QLineEdit(self.centralwidget)
+        self.page_line_edit = QLineEdit(self.page_navigation_frame)
         self.page_line_edit.setObjectName(u"page_line_edit")
         sizePolicy2.setHeightForWidth(self.page_line_edit.sizePolicy().hasHeightForWidth())
         self.page_line_edit.setSizePolicy(sizePolicy2)
@@ -116,14 +122,14 @@ class Ui_MainWindow(object):
         self.page_line_edit.setAutoFillBackground(False)
         self.page_line_edit.setAlignment(Qt.AlignCenter)
 
-        self.page_navigation.addWidget(self.page_line_edit)
+        self.horizontalLayout_5.addWidget(self.page_line_edit)
 
-        self.page_label = QLabel(self.centralwidget)
+        self.page_label = QLabel(self.page_navigation_frame)
         self.page_label.setObjectName(u"page_label")
 
-        self.page_navigation.addWidget(self.page_label)
+        self.horizontalLayout_5.addWidget(self.page_label)
 
-        self.next_page = QPushButton(self.centralwidget)
+        self.next_page = QPushButton(self.page_navigation_frame)
         self.next_page.setObjectName(u"next_page")
         sizePolicy2.setHeightForWidth(self.next_page.sizePolicy().hasHeightForWidth())
         self.next_page.setSizePolicy(sizePolicy2)
@@ -131,9 +137,9 @@ class Ui_MainWindow(object):
         icon2.addFile(u":/resources/caret-right-fill.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.next_page.setIcon(icon2)
 
-        self.page_navigation.addWidget(self.next_page)
+        self.horizontalLayout_5.addWidget(self.next_page)
 
-        self.last_page = QPushButton(self.centralwidget)
+        self.last_page = QPushButton(self.page_navigation_frame)
         self.last_page.setObjectName(u"last_page")
         sizePolicy2.setHeightForWidth(self.last_page.sizePolicy().hasHeightForWidth())
         self.last_page.setSizePolicy(sizePolicy2)
@@ -141,11 +147,14 @@ class Ui_MainWindow(object):
         icon3.addFile(u":/resources/skip-end-fill.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.last_page.setIcon(icon3)
 
-        self.page_navigation.addWidget(self.last_page)
+        self.horizontalLayout_5.addWidget(self.last_page)
 
-        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer_2 = QSpacerItem(102, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.page_navigation.addItem(self.horizontalSpacer_2)
+        self.horizontalLayout_5.addItem(self.horizontalSpacer_2)
+
+
+        self.page_navigation.addWidget(self.page_navigation_frame)
 
 
         self.main_layout.addLayout(self.page_navigation)
@@ -380,7 +389,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 733, 25))
+        self.menubar.setGeometry(QRect(0, 0, 766, 25))
         self.menuFile = QMenu(self.menubar)
         self.menuFile.setObjectName(u"menuFile")
         self.menuAbout = QMenu(self.menubar)
