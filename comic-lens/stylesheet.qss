@@ -35,6 +35,7 @@ QMenuBar
     background-color: #141414;
 }
 
+
 /* QLabel */
 QLabel
 {
