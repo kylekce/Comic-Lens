@@ -46,7 +46,7 @@ QGroupBox
 
 /* QTextEdit */
 {
-    background-color: 
+    background-color: #141414
 }
 
 /*QPushButton*/
