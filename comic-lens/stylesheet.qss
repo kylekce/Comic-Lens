@@ -34,7 +34,10 @@ QMenuBar
 {
     background-color: #141414;
 }
-QMenu::ho
+QMenu::hover
+{
+    background-color: 
+}
 
 /* QLabel */
 QLabel
