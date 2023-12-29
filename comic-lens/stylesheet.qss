@@ -56,7 +56,7 @@ QSpinBox
 /* QComboBox */
 QComboBox
 {
-    background-color: #49494a;
+    background-color: #393939;
     border: none;
 }
 
