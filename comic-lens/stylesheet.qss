@@ -26,12 +26,6 @@ QFrame#page_navigation_frame
     border-radius: 29;  
 }
 
-/* pdf_viewer */
-#pdf_viewer
-{
-    background-color: #343434;
-}
-
 /* QLabel */
 QLabel
 {
