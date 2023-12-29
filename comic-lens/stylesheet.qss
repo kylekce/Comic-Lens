@@ -35,7 +35,7 @@ QMenuBar
 }
 
 /* QMenu */
-QMenu::hover
+QMenu
 {
     background-color: #41cd52
 }
