@@ -112,7 +112,10 @@ QPushButton::pressed
     border: none;
 }
 
-QPushButton:
+QPushButton::selected
+{
+    
+}
 
 
 
