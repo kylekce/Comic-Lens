@@ -52,7 +52,7 @@ QGroupBox
 {
     background-color: transparent;
     border: 1px solid #41cd52;
-    padding-top: 5px;
+    padding-top: 50px;
 }
 
 /* QSpinBox */
