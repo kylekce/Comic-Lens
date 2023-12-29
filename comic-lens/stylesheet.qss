@@ -2,7 +2,7 @@
 * {
     font-family: "Segoe UI", sans-serif;
     color: #f2e9e4;
-    background-color: #403f4c;
+    background-color: #343434;
 }
 
 /*QFrame*/
