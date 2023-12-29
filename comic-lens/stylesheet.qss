@@ -38,6 +38,8 @@ QLabel
     background-color: transparent;
 }
 
+/*  */
+
 /*QPushButton*/
 QPushButton
 {
