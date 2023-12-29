@@ -111,26 +111,7 @@ QPushButton::checked
     background-color: #f2e9e4;
     border: none;
 }
-
-
-
-/*QCheckBox*/
-QCheckBox
-{
-	background-color: transparent;
-	font-weight: bold;
-}
-
-
-QCheckBox::indicator
-{
-    background-color: #000;
-    border: 1px solid #41cd52;
-    width: 12px;
-    height: 12px;
-
-}
-
+W
 
 /*QListView*/
 QListView 
