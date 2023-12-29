@@ -88,7 +88,8 @@ QSlider::handle
 }
 QSlider::up-arrow
 {
-    
+
+    background: #41cd52
 }
 
 /*QPushButton*/
