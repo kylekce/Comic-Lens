@@ -80,7 +80,7 @@ class Ui_MainWindow(object):
 
         self.page_navigation = QHBoxLayout()
         self.page_navigation.setObjectName(u"page_navigation")
-        self.page_navigation.setContentsMargins(0, -1, -1, -1)
+        self.page_navigation.setContentsMargins(0, -1, -1, 11)
         self.page_navigation_frame = QFrame(self.centralwidget)
         self.page_navigation_frame.setObjectName(u"page_navigation_frame")
         self.page_navigation_frame.setFrameShape(QFrame.StyledPanel)
