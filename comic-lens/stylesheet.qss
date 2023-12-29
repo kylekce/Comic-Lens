@@ -46,7 +46,7 @@ QGroupBox
 }
 
 /* QTextEdit */
-QTextEdit, QLineEdit
+QTextEdit
 {
     background-color: #141414
 }
