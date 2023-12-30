@@ -194,6 +194,8 @@ class ScreenshotArea(QWidget):
                 "Character or text not found in the selection."
             )
             self.output_text_edit.setText("")
+
+        # TODO: Catch httpcore._exceptions.ConnectError
         except Exception as e:
             # Set the style sheet
             self.input_text_edit.setStyleSheet("color: red;")
