@@ -81,6 +81,16 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             )
         )
 
+        # Resize factor
+        self.resize_factor_slider.valueChanged.connect(
+            self.resize_factor_slider_changed
+        )
+        self.resize_factor_box.valueChanged.connect(self.resize_factor_box_changed)
+
+        # Median blur
+        self.median_blur_slider.valueChanged.connect(self.median_blur_slider_changed)
+        self.median_blur_box.valueChanged.connect(self.median_blur_box_changed)
+
     def box_screenshot_toggled(self, checked):
         """If the box is checked, replace the PDFViewer widget with the ScreenshotArea widget"""
         if checked:
@@ -145,6 +155,22 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         """Connect the page line edit return pressed event to the page line edit return pressed method"""
         self.pdf_viewer.page_line_edit_return_pressed(int(self.page_line_edit.text()))
         self.screenshot_area.reset()
+
+    def resize_factor_slider_changed(self):
+        """Set the resize factor box value to the slider value"""
+        self.resize_factor_box.setValue(self.resize_factor_slider.value())
+
+    def resize_factor_box_changed(self):
+        """Set the resize factor slider value to the box value"""
+        self.resize_factor_slider.setValue(self.resize_factor_box.value())
+
+    def median_blur_slider_changed(self):
+        """Set the median blur box value to the slider value"""
+        self.median_blur_box.setValue(self.median_blur_slider.value())
+
+    def median_blur_box_changed(self):
+        """Set the median blur slider value to the box value"""
+        self.median_blur_slider.setValue(self.median_blur_box.value())
 
 
 if __name__ == "__main__":

@@ -177,7 +177,8 @@ class ScreenshotArea(QWidget):
                 self.input_text, self.output_language, self.input_language
             )
 
-            # TODO: Disable the read only mode
+            # Disable the read only mode
+            self.input_text_edit.setReadOnly(False)
 
             # Set the style sheet
             self.input_text_edit.setStyleSheet("color: #e0d7d2;")
@@ -185,7 +186,8 @@ class ScreenshotArea(QWidget):
             self.output_text_edit.setText(self.output_text)
 
         except (TypeError, AttributeError):
-            # TODO: Enable the read only mode
+            # Enable the read only mode
+            self.input_text_edit.setReadOnly(True)
 
             # Set the style sheet
             self.input_text_edit.setStyleSheet("color: red;")
@@ -200,7 +202,8 @@ class ScreenshotArea(QWidget):
             # Set the style sheet
             self.input_text_edit.setStyleSheet("color: red;")
 
-            # TODO: Enable the read only mode
+            # Enable the read only mode
+            self.input_text_edit.setReadOnly(True)
 
             self.input_text_edit.setText(f"Something went wrong.\n\n{e}")
             self.output_text_edit.setText("")

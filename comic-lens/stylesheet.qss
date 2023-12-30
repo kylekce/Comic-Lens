@@ -2,7 +2,7 @@
 QFrame#toolbar_frame
 {
     background-color: #141414;
-    border-top: 3px solid black;
+    border-top: 1px solid black;
 }
 QFrame#main_layout_frame
 {
@@ -11,15 +11,36 @@ QFrame#main_layout_frame
 QFrame#main_layout_2_frame
 {
     background-color: #141414;
-    border: 3px solid black;
-    border-right: none;
-    border-bottom: none
+    border-left: 1px solid black;
 }
 QFrame#page_navigation_frame
 {
     background-color: #141414;
     border: 7px solid #343434;
     border-radius: 29;  
+}
+
+/* QMenuBar */
+QMenuBar
+{
+    background-color: #141414;
+    color: #e0d7d2;
+    border-bottom: 1px solid black;
+}
+QMenuBar::item::selected
+{
+    background-color: #41cd52;
+}
+
+/* QMenu */
+QMenu
+{
+    background-color: #141414;
+    color: #e0d7d2;
+}
+QMenu::item::selected
+{
+    background-color: #41cd52;
 }
 
 /* QLabel */
@@ -79,6 +100,10 @@ QSlider
 QSlider::handle
 {
     background: #41cd52
+}
+QSlider::handle::hover
+{
+    background: #f2e9e4
 }
 
 /*QPushButton*/

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>796</width>
+    <width>860</width>
     <height>723</height>
    </rect>
   </property>
@@ -133,7 +133,7 @@
                    </sizepolicy>
                   </property>
                   <property name="toolTip">
-                   <string>Go to the Start Page</string>
+                   <string>Go to the start page</string>
                   </property>
                   <property name="text">
                    <string/>
@@ -153,7 +153,7 @@
                    </sizepolicy>
                   </property>
                   <property name="toolTip">
-                   <string>Go to the Previous Page</string>
+                   <string>Go to the previous page</string>
                   </property>
                   <property name="text">
                    <string/>
@@ -179,7 +179,7 @@
                    </size>
                   </property>
                   <property name="toolTip">
-                   <string>Current Page Number</string>
+                   <string>Current page number</string>
                   </property>
                   <property name="autoFillBackground">
                    <bool>false</bool>
@@ -208,7 +208,7 @@
                    </sizepolicy>
                   </property>
                   <property name="toolTip">
-                   <string>Go to the Next Page</string>
+                   <string>Go to the next page</string>
                   </property>
                   <property name="text">
                    <string/>
@@ -228,7 +228,7 @@
                    </sizepolicy>
                   </property>
                   <property name="toolTip">
-                   <string>Go to the Last Page</string>
+                   <string>Go to the last page</string>
                   </property>
                   <property name="text">
                    <string/>
@@ -472,6 +472,9 @@
              <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,0,0">
               <item>
                <widget class="QComboBox" name="input_combo_box">
+                <property name="toolTip">
+                 <string>Change the input's language</string>
+                </property>
                 <property name="currentText">
                  <string>English</string>
                 </property>
@@ -532,7 +535,7 @@
                  </font>
                 </property>
                 <property name="toolTip">
-                 <string>Re-run the Translation</string>
+                 <string>Re-run the translation</string>
                 </property>
                 <property name="text">
                  <string>Translate to</string>
@@ -545,6 +548,9 @@
               </item>
               <item>
                <widget class="QComboBox" name="output_combo_box">
+                <property name="toolTip">
+                 <string>Change the output's language</string>
+                </property>
                 <property name="currentIndex">
                  <number>2</number>
                 </property>
@@ -620,7 +626,7 @@
               </sizepolicy>
              </property>
              <property name="toolTip">
-              <string>Fit to Page</string>
+              <string>Fit to the page</string>
              </property>
              <property name="text">
               <string/>
@@ -640,7 +646,7 @@
               </sizepolicy>
              </property>
              <property name="toolTip">
-              <string>Zoom Out</string>
+              <string>Zoom out</string>
              </property>
              <property name="text">
               <string/>
@@ -660,7 +666,7 @@
               </sizepolicy>
              </property>
              <property name="toolTip">
-              <string>Zoom In</string>
+              <string>Zoom in</string>
              </property>
              <property name="text">
               <string/>
@@ -705,7 +711,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>796</width>
+     <width>860</width>
      <height>23</height>
     </rect>
    </property>
