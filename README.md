@@ -32,10 +32,11 @@ __Note:__ This application currently does not have a installer provided yet. So,
     ```
 * Run via terminal
    ```sh
+   cd comic-lens
    python mainwindow.py
    ```
 
-* Run via Qt Creator
+* Or run via Qt Creator
    * Open the project file `comic-lens.pyproject` in Qt Creator.
    * Click on the green play button on the bottom left corner of the IDE.
 
