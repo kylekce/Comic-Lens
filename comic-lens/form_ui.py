@@ -16,18 +16,19 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QIcon, QImage, QKeySequence, QLinearGradient,
     QPainter, QPalette, QPixmap, QRadialGradient,
     QTransform)
-from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QGroupBox,
-    QHBoxLayout, QLabel, QLayout, QLineEdit,
+from PySide6.QtWidgets import (QAbstractSpinBox, QApplication, QComboBox, QFrame,
+    QGroupBox, QHBoxLayout, QLabel, QLayout,
     QMainWindow, QMenu, QMenuBar, QPushButton,
-    QSizePolicy, QSlider, QSpacerItem, QSpinBox,
-    QTextEdit, QVBoxLayout, QWidget)
+    QScrollArea, QSizePolicy, QSlider, QSpacerItem,
+    QSpinBox, QTabWidget, QTextEdit, QVBoxLayout,
+    QWidget)
 import resource_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(860, 723)
+        MainWindow.resize(878, 776)
         sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -58,6 +59,11 @@ class Ui_MainWindow(object):
         self.actionBox_Screenshot.setCheckable(True)
         self.actionAsd = QAction(MainWindow)
         self.actionAsd.setObjectName(u"actionAsd")
+        self.actionAbout = QAction(MainWindow)
+        self.actionAbout.setObjectName(u"actionAbout")
+        self.actionDocumentation = QAction(MainWindow)
+        self.actionDocumentation.setObjectName(u"actionDocumentation")
+        self.actionDocumentation.setMenuRole(QAction.TextHeuristicRole)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         sizePolicy1 = QSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.Expanding)
@@ -125,15 +131,18 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_5.addWidget(self.previous_page)
 
-        self.page_line_edit = QLineEdit(self.page_navigation_frame)
-        self.page_line_edit.setObjectName(u"page_line_edit")
-        sizePolicy2.setHeightForWidth(self.page_line_edit.sizePolicy().hasHeightForWidth())
-        self.page_line_edit.setSizePolicy(sizePolicy2)
-        self.page_line_edit.setMaximumSize(QSize(25, 16777215))
-        self.page_line_edit.setAutoFillBackground(False)
-        self.page_line_edit.setAlignment(Qt.AlignCenter)
+        self.page_spin_box = QSpinBox(self.page_navigation_frame)
+        self.page_spin_box.setObjectName(u"page_spin_box")
+        sizePolicy3 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Fixed)
+        sizePolicy3.setHorizontalStretch(0)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.page_spin_box.sizePolicy().hasHeightForWidth())
+        self.page_spin_box.setSizePolicy(sizePolicy3)
+        self.page_spin_box.setAlignment(Qt.AlignCenter)
+        self.page_spin_box.setButtonSymbols(QAbstractSpinBox.NoButtons)
+        self.page_spin_box.setMaximum(999)
 
-        self.horizontalLayout_5.addWidget(self.page_line_edit)
+        self.horizontalLayout_5.addWidget(self.page_spin_box)
 
         self.page_label = QLabel(self.page_navigation_frame)
         self.page_label.setObjectName(u"page_label")
@@ -186,6 +195,7 @@ class Ui_MainWindow(object):
         self.main_layout_2_frame.setFrameShadow(QFrame.Raised)
         self.verticalLayout_2 = QVBoxLayout(self.main_layout_2_frame)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.verticalLayout_2.setSizeConstraint(QLayout.SetMaximumSize)
         self.groupBox_2 = QGroupBox(self.main_layout_2_frame)
         self.groupBox_2.setObjectName(u"groupBox_2")
         font1 = QFont()
@@ -196,11 +206,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.box_screenshot = QPushButton(self.groupBox_2)
         self.box_screenshot.setObjectName(u"box_screenshot")
-        sizePolicy3 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
-        sizePolicy3.setHorizontalStretch(0)
-        sizePolicy3.setVerticalStretch(0)
-        sizePolicy3.setHeightForWidth(self.box_screenshot.sizePolicy().hasHeightForWidth())
-        self.box_screenshot.setSizePolicy(sizePolicy3)
+        sizePolicy4 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
+        sizePolicy4.setHorizontalStretch(0)
+        sizePolicy4.setVerticalStretch(0)
+        sizePolicy4.setHeightForWidth(self.box_screenshot.sizePolicy().hasHeightForWidth())
+        self.box_screenshot.setSizePolicy(sizePolicy4)
         font2 = QFont()
         font2.setFamilies([u"Verdana"])
         font2.setBold(True)
@@ -224,14 +234,26 @@ class Ui_MainWindow(object):
         self.groupBox_3.setFont(font1)
         self.verticalLayout_4 = QVBoxLayout(self.groupBox_3)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
-        self.label = QLabel(self.groupBox_3)
+        self.tabWidget = QTabWidget(self.groupBox_3)
+        self.tabWidget.setObjectName(u"tabWidget")
+        self.tab = QWidget()
+        self.tab.setObjectName(u"tab")
+        self.verticalLayout_6 = QVBoxLayout(self.tab)
+        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
+        self.frame = QFrame(self.tab)
+        self.frame.setObjectName(u"frame")
+        self.frame.setFrameShape(QFrame.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_7 = QVBoxLayout(self.frame)
+        self.verticalLayout_7.setObjectName(u"verticalLayout_7")
+        self.label = QLabel(self.frame)
         self.label.setObjectName(u"label")
 
-        self.verticalLayout_4.addWidget(self.label)
+        self.verticalLayout_7.addWidget(self.label)
 
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.resize_factor_slider = QSlider(self.groupBox_3)
+        self.resize_factor_slider = QSlider(self.frame)
         self.resize_factor_slider.setObjectName(u"resize_factor_slider")
         self.resize_factor_slider.setMinimum(1)
         self.resize_factor_slider.setMaximum(100)
@@ -240,8 +262,10 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout.addWidget(self.resize_factor_slider)
 
-        self.resize_factor_box = QSpinBox(self.groupBox_3)
+        self.resize_factor_box = QSpinBox(self.frame)
         self.resize_factor_box.setObjectName(u"resize_factor_box")
+        self.resize_factor_box.setAlignment(Qt.AlignCenter)
+        self.resize_factor_box.setButtonSymbols(QAbstractSpinBox.NoButtons)
         self.resize_factor_box.setMinimum(1)
         self.resize_factor_box.setMaximum(100)
         self.resize_factor_box.setSingleStep(1)
@@ -250,45 +274,82 @@ class Ui_MainWindow(object):
         self.horizontalLayout.addWidget(self.resize_factor_box)
 
 
-        self.verticalLayout_4.addLayout(self.horizontalLayout)
+        self.verticalLayout_7.addLayout(self.horizontalLayout)
 
-        self.label_2 = QLabel(self.groupBox_3)
+        self.label_2 = QLabel(self.frame)
         self.label_2.setObjectName(u"label_2")
 
-        self.verticalLayout_4.addWidget(self.label_2)
+        self.verticalLayout_7.addWidget(self.label_2)
 
         self.horizontalLayout_3 = QHBoxLayout()
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
-        self.median_blur_slider = QSlider(self.groupBox_3)
+        self.median_blur_slider = QSlider(self.frame)
         self.median_blur_slider.setObjectName(u"median_blur_slider")
         self.median_blur_slider.setMinimum(1)
         self.median_blur_slider.setMaximum(100)
-        self.median_blur_slider.setValue(5)
+        self.median_blur_slider.setValue(1)
         self.median_blur_slider.setOrientation(Qt.Horizontal)
 
         self.horizontalLayout_3.addWidget(self.median_blur_slider)
 
-        self.median_blur_box = QSpinBox(self.groupBox_3)
+        self.median_blur_box = QSpinBox(self.frame)
         self.median_blur_box.setObjectName(u"median_blur_box")
+        self.median_blur_box.setAlignment(Qt.AlignCenter)
+        self.median_blur_box.setButtonSymbols(QAbstractSpinBox.NoButtons)
         self.median_blur_box.setMinimum(1)
         self.median_blur_box.setMaximum(100)
-        self.median_blur_box.setValue(5)
+        self.median_blur_box.setValue(1)
 
         self.horizontalLayout_3.addWidget(self.median_blur_box)
 
 
-        self.verticalLayout_4.addLayout(self.horizontalLayout_3)
+        self.verticalLayout_7.addLayout(self.horizontalLayout_3)
+
+        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_7.addItem(self.verticalSpacer)
+
+
+        self.verticalLayout_6.addWidget(self.frame)
+
+        self.tabWidget.addTab(self.tab, "")
+        self.tab_2 = QWidget()
+        self.tab_2.setObjectName(u"tab_2")
+        self.verticalLayout_8 = QVBoxLayout(self.tab_2)
+        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
+        self.scrollArea = QScrollArea(self.tab_2)
+        self.scrollArea.setObjectName(u"scrollArea")
+        self.scrollArea.setWidgetResizable(True)
+        self.scrollAreaWidgetContents = QWidget()
+        self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 208, 146))
+        self.verticalLayout_9 = QVBoxLayout(self.scrollAreaWidgetContents)
+        self.verticalLayout_9.setObjectName(u"verticalLayout_9")
+        self.screenshot_preview_label = QLabel(self.scrollAreaWidgetContents)
+        self.screenshot_preview_label.setObjectName(u"screenshot_preview_label")
+        sizePolicy.setHeightForWidth(self.screenshot_preview_label.sizePolicy().hasHeightForWidth())
+        self.screenshot_preview_label.setSizePolicy(sizePolicy)
+
+        self.verticalLayout_9.addWidget(self.screenshot_preview_label)
+
+        self.scrollArea.setWidget(self.scrollAreaWidgetContents)
+
+        self.verticalLayout_8.addWidget(self.scrollArea)
+
+        self.tabWidget.addTab(self.tab_2, "")
+
+        self.verticalLayout_4.addWidget(self.tabWidget)
 
 
         self.verticalLayout_2.addWidget(self.groupBox_3)
 
         self.groupBox = QGroupBox(self.main_layout_2_frame)
         self.groupBox.setObjectName(u"groupBox")
-        sizePolicy4 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
-        sizePolicy4.setHorizontalStretch(0)
-        sizePolicy4.setVerticalStretch(0)
-        sizePolicy4.setHeightForWidth(self.groupBox.sizePolicy().hasHeightForWidth())
-        self.groupBox.setSizePolicy(sizePolicy4)
+        sizePolicy5 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        sizePolicy5.setHorizontalStretch(0)
+        sizePolicy5.setVerticalStretch(0)
+        sizePolicy5.setHeightForWidth(self.groupBox.sizePolicy().hasHeightForWidth())
+        self.groupBox.setSizePolicy(sizePolicy5)
         self.groupBox.setMinimumSize(QSize(250, 0))
         self.groupBox.setFont(font1)
         self.verticalLayout = QVBoxLayout(self.groupBox)
@@ -339,6 +400,8 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_2.addWidget(self.groupBox)
 
+        self.verticalLayout_2.setStretch(1, 2)
+        self.verticalLayout_2.setStretch(2, 1)
 
         self.main_layout_2.addWidget(self.main_layout_2_frame)
 
@@ -414,7 +477,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 860, 23))
+        self.menubar.setGeometry(QRect(0, 0, 878, 23))
         self.menuFile = QMenu(self.menubar)
         self.menuFile.setObjectName(u"menuFile")
         self.menuAbout = QMenu(self.menubar)
@@ -431,6 +494,8 @@ class Ui_MainWindow(object):
         self.menubar.addAction(self.menuView.menuAction())
         self.menubar.addAction(self.menuAbout.menuAction())
         self.menuFile.addAction(self.actionOpen_PDF)
+        self.menuAbout.addAction(self.actionAbout)
+        self.menuAbout.addAction(self.actionDocumentation)
         self.menuView.addAction(self.actionZoom_In)
         self.menuView.addAction(self.actionZoom_Out)
         self.menuView.addAction(self.actionFit)
@@ -441,6 +506,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
+        self.tabWidget.setCurrentIndex(1)
         self.input_combo_box.setCurrentIndex(4)
         self.output_combo_box.setCurrentIndex(2)
 
@@ -460,6 +526,8 @@ class Ui_MainWindow(object):
         self.actionLast_Page.setText(QCoreApplication.translate("MainWindow", u"Last Page", None))
         self.actionBox_Screenshot.setText(QCoreApplication.translate("MainWindow", u"Box Screenshot", None))
         self.actionAsd.setText(QCoreApplication.translate("MainWindow", u"Asd", None))
+        self.actionAbout.setText(QCoreApplication.translate("MainWindow", u"About", None))
+        self.actionDocumentation.setText(QCoreApplication.translate("MainWindow", u"Documentation", None))
 #if QT_CONFIG(tooltip)
         self.start_page.setToolTip(QCoreApplication.translate("MainWindow", u"Go to the start page", None))
 #endif // QT_CONFIG(tooltip)
@@ -468,10 +536,8 @@ class Ui_MainWindow(object):
         self.previous_page.setToolTip(QCoreApplication.translate("MainWindow", u"Go to the previous page", None))
 #endif // QT_CONFIG(tooltip)
         self.previous_page.setText("")
-#if QT_CONFIG(tooltip)
-        self.page_line_edit.setToolTip(QCoreApplication.translate("MainWindow", u"Current page number", None))
-#endif // QT_CONFIG(tooltip)
-        self.page_line_edit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"0", None))
+        self.page_spin_box.setSuffix("")
+        self.page_spin_box.setPrefix("")
         self.page_label.setText(QCoreApplication.translate("MainWindow", u"of 0", None))
 #if QT_CONFIG(tooltip)
         self.next_page.setToolTip(QCoreApplication.translate("MainWindow", u"Go to the next page", None))
@@ -502,6 +568,9 @@ class Ui_MainWindow(object):
 #if QT_CONFIG(tooltip)
         self.median_blur_slider.setToolTip(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Adjust the kernel size for median blur</p></body></html>", None))
 #endif // QT_CONFIG(tooltip)
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"Settings", None))
+        self.screenshot_preview_label.setText("")
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("MainWindow", u"Preview", None))
         self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"Translation", None))
         self.input_combo_box.setItemText(0, QCoreApplication.translate("MainWindow", u"Chinese - Simplified", None))
         self.input_combo_box.setItemText(1, QCoreApplication.translate("MainWindow", u"Chinese - Simplified (Vertical)", None))
@@ -543,7 +612,7 @@ class Ui_MainWindow(object):
         self.zoom_in.setText("")
         self.current_file_label.setText(QCoreApplication.translate("MainWindow", u"Open a PDF to start.", None))
         self.menuFile.setTitle(QCoreApplication.translate("MainWindow", u"File", None))
-        self.menuAbout.setTitle(QCoreApplication.translate("MainWindow", u"About", None))
+        self.menuAbout.setTitle(QCoreApplication.translate("MainWindow", u"Help", None))
         self.menuView.setTitle(QCoreApplication.translate("MainWindow", u"View", None))
         self.menuPage.setTitle(QCoreApplication.translate("MainWindow", u"Page", None))
     # retranslateUi

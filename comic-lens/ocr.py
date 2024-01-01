@@ -17,7 +17,7 @@ class OCR:
         language,
         preview_path="preprocessed.png",
         resize_factor=5,
-        blur_kernel_size=5,
+        blur_kernel_size=1,
     ):
         """
         Open and preprocess the image for OCR.
@@ -32,6 +32,7 @@ class OCR:
         Returns:
         - str: Extracted text using OCR.
         """
+
         # Open the image
         img = cv2.imread(image_path)
 

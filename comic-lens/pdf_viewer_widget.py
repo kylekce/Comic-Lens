@@ -73,6 +73,11 @@ class PDFViewer(QWidget):
             QImage.Format_RGBA8888,  # Use RGBA format for alpha channel
         )
 
+        # Set the DPI
+        dpi = 350
+        qimage.setDotsPerMeterX(dpi * 100 / 2.54)
+        qimage.setDotsPerMeterY(dpi * 100 / 2.54)
+
         # Convert the QImage to a QPixmap
         pixmap = QPixmap.fromImage(qimage)
 
@@ -108,7 +113,9 @@ class PDFViewer(QWidget):
 
     def fit(self):
         """Fit the PDF page to the QGraphicsView"""
-        self.graphics_view.fitInView(self.graphics_view.sceneRect(), Qt.KeepAspectRatio)
+        scene_rect = self.scene.itemsBoundingRect()
+        self.graphics_view.setSceneRect(scene_rect)
+        self.graphics_view.fitInView(scene_rect, Qt.KeepAspectRatio)
 
     def next_page(self, line_edit):
         """Go to the next page"""
@@ -172,4 +179,4 @@ class PDFViewer(QWidget):
 
     def change_page_line_edit(self, line_edit):
         """Change page number entered in the line edit"""
-        line_edit.setText(str(self.page.number + 1))
+        line_edit.setValue(self.page.number + 1)

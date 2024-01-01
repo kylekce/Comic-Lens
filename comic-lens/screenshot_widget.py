@@ -13,6 +13,7 @@ class ScreenshotArea(QWidget):
         output_text_edit,
         input_combo_box,
         output_combo_box,
+        screenshot_preview_label,
     ):
         super().__init__()
 
@@ -24,6 +25,11 @@ class ScreenshotArea(QWidget):
         self.end_pos = None
         self.screenshot = None
         self.is_selecting = False
+        self.screenshot_preview_label = screenshot_preview_label
+
+        # OCR Parameters
+        self.resize_factor = 5
+        self.blur_kernel_size = 5
 
         # Input
         self.input_text = None
@@ -88,6 +94,11 @@ class ScreenshotArea(QWidget):
         self.screenshot = None
         self.is_selecting = False
         self.update()
+
+    def set_image_preview(self, image_path="preprocessed.png"):
+        """Set the image preview in the screenshot_preview_label"""
+        pixmap = QPixmap(image_path)
+        self.screenshot_preview_label.setPixmap(pixmap.scaledToWidth(200))
 
     def capture_screenshot(self):
         """Capture the screenshot within the selected rectangle"""
@@ -164,8 +175,16 @@ class ScreenshotArea(QWidget):
 
     def run_ocr(self):
         """Perform OCR and display the result in the input_text_edit widget"""
-        self.input_text = self.ocr.image_to_string(self.filepath, self.ocr_language)
+        self.input_text = self.ocr.image_to_string(
+            image_path=self.filepath,
+            language=self.ocr_language,
+            resize_factor=self.resize_factor,
+            blur_kernel_size=self.blur_kernel_size,
+        )
         self.input_text_edit.setText(self.input_text)
+
+        # Set the image preview
+        self.set_image_preview()
 
     def run_translator(self, input_text=None):
         """Perform translation and display the result in the output_text_edit widget"""
@@ -217,3 +236,16 @@ class ScreenshotArea(QWidget):
         if self.is_selecting:
             self.run_ocr()
             self.run_translator()
+
+    def resize_factor_changed(self, value):
+        """Update the resize factor"""
+        self.resize_factor = value
+        self.capture_screenshot()
+
+    def blur_kernel_size_changed(self, value):
+        """Update the blur kernel size"""
+        self.blur_kernel_size = value
+        self.capture_screenshot()
+
+        
+        
