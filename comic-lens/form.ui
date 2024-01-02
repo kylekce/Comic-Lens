@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>878</width>
+    <width>1237</width>
     <height>776</height>
    </rect>
   </property>
@@ -23,6 +23,10 @@
   </property>
   <property name="windowTitle">
    <string>Comic Lens</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resource.qrc">
+    <normaloff>:/resources/logo.png</normaloff>:/resources/logo.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
@@ -92,6 +96,214 @@
              <property name="sizeConstraint">
               <enum>QLayout::SetDefaultConstraint</enum>
              </property>
+             <item>
+              <layout class="QVBoxLayout" name="start_layout">
+               <item>
+                <spacer name="verticalSpacer_2">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_7">
+                 <item>
+                  <spacer name="horizontalSpacer_6">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <layout class="QVBoxLayout" name="verticalLayout_11">
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_8">
+                     <property name="bottomMargin">
+                      <number>20</number>
+                     </property>
+                     <item>
+                      <spacer name="horizontalSpacer_8">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>40</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_6">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>0</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>350</width>
+                         <height>205</height>
+                        </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <family>Verdana</family>
+                         <pointsize>9</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string/>
+                       </property>
+                       <property name="textFormat">
+                        <enum>Qt::AutoText</enum>
+                       </property>
+                       <property name="pixmap">
+                        <pixmap resource="resource.qrc">:/resources/logo-mini.png</pixmap>
+                       </property>
+                       <property name="scaledContents">
+                        <bool>true</bool>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignCenter</set>
+                       </property>
+                       <property name="margin">
+                        <number>0</number>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <spacer name="horizontalSpacer_7">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>40</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                    </layout>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="start_label_1">
+                     <property name="text">
+                      <string>1. Open up your favorite book—be it a manga, comics, or even a webcomic. </string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                     </property>
+                     <property name="margin">
+                      <number>10</number>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="start_label_2">
+                     <property name="text">
+                      <string>2. Select the language of the book and the output you fancy. Your reading, your rules!</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                     </property>
+                     <property name="margin">
+                      <number>10</number>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="start_label_3">
+                     <property name="text">
+                      <string>3. Enable the box selection and start drawing a box around the texts or characters you want to translate! </string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                     </property>
+                     <property name="margin">
+                      <number>10</number>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <spacer name="horizontalSpacer_5">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_6">
+                 <property name="topMargin">
+                  <number>20</number>
+                 </property>
+                 <item>
+                  <widget class="QPushButton" name="open_button">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>Verdana</family>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>Open</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <spacer name="verticalSpacer_3">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </item>
             </layout>
            </item>
            <item>
@@ -289,9 +501,9 @@
              </property>
              <layout class="QHBoxLayout" name="horizontalLayout_2">
               <item>
-               <widget class="QPushButton" name="box_screenshot">
+               <widget class="QPushButton" name="box_button">
                 <property name="sizePolicy">
-                 <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                   <horstretch>0</horstretch>
                   <verstretch>0</verstretch>
                  </sizepolicy>
@@ -303,7 +515,7 @@
                  </font>
                 </property>
                 <property name="toolTip">
-                 <string>Draw a box to select a character or text</string>
+                 <string>Draw a box to select</string>
                 </property>
                 <property name="text">
                  <string> Box</string>
@@ -385,10 +597,16 @@
                           <number>1</number>
                          </property>
                          <property name="maximum">
-                          <number>100</number>
+                          <number>50</number>
+                         </property>
+                         <property name="pageStep">
+                          <number>0</number>
                          </property>
                          <property name="value">
                           <number>5</number>
+                         </property>
+                         <property name="tracking">
+                          <bool>true</bool>
                          </property>
                          <property name="orientation">
                           <enum>Qt::Horizontal</enum>
@@ -410,7 +628,7 @@
                           <number>1</number>
                          </property>
                          <property name="maximum">
-                          <number>100</number>
+                          <number>50</number>
                          </property>
                          <property name="singleStep">
                           <number>1</number>
@@ -443,7 +661,10 @@
                           <number>1</number>
                          </property>
                          <property name="maximum">
-                          <number>100</number>
+                          <number>50</number>
+                         </property>
+                         <property name="pageStep">
+                          <number>0</number>
                          </property>
                          <property name="value">
                           <number>1</number>
@@ -465,7 +686,7 @@
                           <number>1</number>
                          </property>
                          <property name="maximum">
-                          <number>100</number>
+                          <number>50</number>
                          </property>
                          <property name="value">
                           <number>1</number>
@@ -507,7 +728,7 @@
                       <rect>
                        <x>0</x>
                        <y>0</y>
-                       <width>208</width>
+                       <width>308</width>
                        <height>146</height>
                       </rect>
                      </property>
@@ -629,10 +850,6 @@
                 </property>
                 <property name="text">
                  <string>Translate to</string>
-                </property>
-                <property name="icon">
-                 <iconset resource="resource.qrc">
-                  <normaloff>:/resources/caret-down-fill.svg</normaloff>:/resources/caret-down-fill.svg</iconset>
                 </property>
                </widget>
               </item>
@@ -801,7 +1018,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>878</width>
+     <width>1237</width>
      <height>23</height>
     </rect>
    </property>
@@ -844,7 +1061,7 @@
   </widget>
   <action name="actionOpen_PDF">
    <property name="text">
-    <string>Open PDF</string>
+    <string>Open</string>
    </property>
   </action>
   <action name="actionZoom_In">

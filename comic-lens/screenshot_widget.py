@@ -216,7 +216,6 @@ class ScreenshotArea(QWidget):
             )
             self.output_text_edit.setText("")
 
-        # TODO: Catch httpcore._exceptions.ConnectError
         except Exception as e:
             # Set the style sheet
             self.input_text_edit.setStyleSheet("color: red;")
@@ -246,6 +245,3 @@ class ScreenshotArea(QWidget):
         """Update the blur kernel size"""
         self.blur_kernel_size = value
         self.capture_screenshot()
-
-        
-        

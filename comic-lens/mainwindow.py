@@ -1,6 +1,7 @@
 # This Python file uses the following encoding: utf-8
 import os
 import sys
+import ctypes
 
 from PySide6.QtWidgets import QApplication, QMainWindow
 from PySide6.QtCore import QUrl, Qt
@@ -18,7 +19,13 @@ from screenshot_widget import ScreenshotArea
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
+
         self.setupUi(self)
+        self.pdf = False
+
+        # Set the AppUserModelID for the current process
+        my_app_id = "mycompany.myproduct.subproduct.version"
+        ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(my_app_id)
 
         # Set the initial window state to maximized
         self.setWindowState(self.windowState() | Qt.WindowMaximized)
@@ -36,7 +43,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         # Create an instance of the PDFViewer class
         self.pdf_viewer = PDFViewer()
-        self.page_layout.addWidget(self.pdf_viewer)
 
         # Create an instance of the ScreenshotArea class
         self.screenshot_area = ScreenshotArea(
@@ -56,13 +62,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.screenshot_area.lang_ocr_translate
         )
 
-        # File
-        self.actionOpen_PDF.triggered.connect(
-            lambda: self.pdf_viewer.open_pdf(
-                self.current_file_label, self.page_label, self.page_spin_box
-            )
-        )
-
         # View
         self.actionZoom_In.triggered.connect(self.zoom_in_event)
         self.actionZoom_Out.triggered.connect(self.zoom_out_event)
@@ -74,6 +73,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         # About
         self.actionDocumentation.triggered.connect(self.open_link)
+
+        # Open
+        self.actionOpen_PDF.triggered.connect(self.open_pdf)
+        self.open_button.pressed.connect(self.open_pdf)
 
         # Page Navigation
         self.actionNext_Page.triggered.connect(self.next_page_event)
@@ -88,8 +91,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         self.page_spin_box.lineEdit().returnPressed.connect(self.page_spin_box_changed)
 
-        # Screenshot toggle
-        self.box_screenshot.toggled.connect(self.box_screenshot_toggled)
+        # Box selection toggle
+        self.box_button.toggled.connect(self.box_button_toggled)
 
         # Translate button
         self.translate_button.clicked.connect(
@@ -112,45 +115,60 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.median_blur_box_changed
         )
 
-    def box_screenshot_toggled(self, checked):
-        """If the box is checked, replace the PDFViewer widget with the ScreenshotArea widget"""
-        if checked:
-            self.box_screenshot.setChecked(True)
-            self.actionBox_Screenshot.setChecked(True)
+    def open_pdf(self):
+        """
+        Open a PDF file and replace the start_layout with the pdf_viewer widget
+        """
+        # Remove the start_layout for now
+        self.start_layout.setParent(None)
+
+        # Add the pdf_viewer to the page_layout
+        self.page_layout.addWidget(self.pdf_viewer)
+        self.pdf = self.pdf_viewer.open_pdf(
+            self.current_file_label, self.page_label, self.page_spin_box
+        )
+
+        # Add the start_layout back if the pdf_viewer fails to open the PDF file
+        if not self.pdf:
+            self.page_layout.addLayout(self.start_layout)
+
+    def box_button_toggled(self, checked):
+        """If there is a PDF file open and the box is checked, replace the PDFViewer widget with the ScreenshotArea widget"""
+        if self.pdf and checked:
+            self.box_button.setChecked(True)
             self.page_layout.replaceWidget(self.pdf_viewer, self.screenshot_area)
             self.screenshot_area.show()
         else:
-            self.box_screenshot.setChecked(False)
-            self.actionBox_Screenshot.setChecked(False)
+            self.box_button.setChecked(False)
             self.screenshot_area.reset()
             self.page_layout.replaceWidget(self.screenshot_area, self.pdf_viewer)
             self.screenshot_area.hide()
 
-    def disable_screenshot_box(self):
-        """Disable the screenshot box"""
-        if self.box_screenshot.isChecked():
+    def disable_box_selection(self):
+        """Disable the box selection"""
+        if self.box_button.isChecked():
             self.screenshot_area.reset()
-            self.box_screenshot.setChecked(False)
+            self.box_button.setChecked(False)
             self.actionBox_Screenshot.setChecked(False)
 
     def resizeEvent(self, event):
         """If window is resized, call the disable_screenshot_box method"""
-        self.disable_screenshot_box()
+        self.disable_box_selection()
 
     def zoom_in_event(self):
         """Connect the zoom in action to the zoom in method"""
         self.pdf_viewer.zoom_in()
-        self.disable_screenshot_box()
+        self.disable_box_selection()
 
     def zoom_out_event(self):
         """Connect the zoom out action to the zoom out method"""
         self.pdf_viewer.zoom_out()
-        self.disable_screenshot_box()
+        self.disable_box_selection()
 
     def fit_event(self):
         """Connect the fit action to the fit method"""
         self.pdf_viewer.fit()
-        self.disable_screenshot_box()
+        self.disable_box_selection()
 
     def next_page_event(self):
         """Connect the next page action to the next page method"""

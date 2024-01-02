@@ -13,5 +13,7 @@
         <file>resources/arrow-down-short.svg</file>
         <file>resources/caret-down-fill.svg</file>
         <file>resources/chevron-down-solid.svg</file>
+        <file>resources/logo.png</file>
+        <file>resources/logo-mini.png</file>
     </qresource>
 </RCC>

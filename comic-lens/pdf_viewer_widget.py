@@ -1,4 +1,4 @@
-from PySide6.QtCore import Qt
+from PySide6.QtCore import Qt, QFileInfo, QDir
 from PySide6.QtWidgets import (
     QWidget,
     QVBoxLayout,
@@ -35,30 +35,46 @@ class PDFViewer(QWidget):
     def open_pdf(self, current_file_label, page_label, page_line_edit):
         """Open a PDF file and load the first page"""
         file_dialog = QFileDialog(self)
-        file_dialog.setNameFilter("PDF Files (*.pdf)")
+        file_dialog.setFileMode(QFileDialog.ExistingFile)
+        file_dialog.setNameFilter("PDF files (*.pdf)")
         file_dialog.setViewMode(QFileDialog.Detail)
-        file_path, _ = file_dialog.getOpenFileName()
 
-        if file_path:
-            self.document = fitz.open(file_path)
-            self.page = self.document[0]  # Load the first page
+        # Set the initial directory to the user's home directory
+        file_dialog.setDirectory(QDir.homePath())
 
-            # Render the PDF page to a QPixmap
-            pixmap = self.render_page()
+        if file_dialog.exec_() == QFileDialog.Accepted:
+            selected_files = file_dialog.selectedFiles()
+            if selected_files:
+                file_path = selected_files[0]
+                self.document = fitz.open(file_path)
+                self.page = self.document[0]  # Load the first page
 
-            # Display the QPixmap in the QGraphicsView
-            self.display_page(pixmap)
+                # Render the PDF page to a QPixmap
+                pixmap = self.render_page()
 
-            # Update the current file label with the name of the PDF file
-            file_name = file_path.split("/")[-1].split(".")[0]
+                # Display the QPixmap in the QGraphicsView
+                self.display_page(pixmap)
 
-            current_file_label.setText(file_name)
+                # Update the current file label with the name of the PDF file
+                file_name = QFileInfo(file_path).fileName().split(".")[0]
+                current_file_label.setText(file_name)
 
-            # Update the the page label with the total number of pages
-            page_label.setText(f"of {self.document.page_count}")
+                # Update the page label with the total number of pages
+                page_label.setText(f"of {self.document.page_count}")
 
-            # Update the page line edit
-            self.change_page_line_edit(page_line_edit)
+                # Update the page line edit
+                self.change_page_line_edit(page_line_edit)
+
+                return True
+
+        # If a PDF file already exists
+        if self.document:
+            return True
+
+        # Remove the widget from the layout if the PDF file fails to open
+        self.layout.removeWidget(self.graphics_view)
+
+        return False
 
     def render_page(self):
         """Render the PDF page to a QPixmap with improved rendering quality"""
