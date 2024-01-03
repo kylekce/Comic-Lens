@@ -1,8 +1,8 @@
 {
     "files": [
-        "mainwindow.py",
+        "project.py",
         "form.ui",
         "resource.qrc",
-        " selectablespinbox.py"
+        "selectablespinbox.py"
     ]
 }

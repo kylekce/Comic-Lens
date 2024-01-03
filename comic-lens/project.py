@@ -132,6 +132,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         if not self.pdf:
             self.page_layout.addLayout(self.start_layout)
 
+            return False
+
+        return True
+
     def box_button_toggled(self, checked):
         """If there is a PDF file open and the box is checked, replace the PDFViewer widget with the ScreenshotArea widget"""
         if self.pdf and checked:

@@ -33,7 +33,7 @@ __Note:__ This application currently does not have a installer provided yet. So,
 * Run via terminal
    ```sh
    cd comic-lens
-   python mainwindow.py
+   python project.py
    ```
 
 * Or run via Qt Creator
