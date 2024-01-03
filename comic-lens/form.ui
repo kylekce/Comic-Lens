@@ -968,7 +968,7 @@
               </sizepolicy>
              </property>
              <property name="toolTip">
-              <string>Fit to the page</string>
+              <string>Fit to the area</string>
              </property>
              <property name="text">
               <string/>
@@ -1037,7 +1037,7 @@
          <item>
           <widget class="QLabel" name="current_file_label">
            <property name="text">
-            <string>Open a PDF to start.</string>
+            <string>Open a book to start.</string>
            </property>
           </widget>
          </item>
@@ -1111,7 +1111,7 @@
   </action>
   <action name="actionFit">
    <property name="text">
-    <string>Fit to Page</string>
+    <string>Fit</string>
    </property>
   </action>
   <action name="actionNext_Page">
