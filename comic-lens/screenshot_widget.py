@@ -143,9 +143,13 @@ class ScreenshotArea(QWidget):
             "Chinese - Traditional": "chi_tra",
             "Chinese - Traditional (Vertical)": "chi_tra_vert",
             "English": "eng",
+            "French": "fra",
+            "Indonesian": "ind",
             "Japanese": "jpn",
             "Japanese (Vertical)": "jpn_vert",
             "Korean": "kor",
+            "Spanish": "spa",
+            "Spanish - Old": "spa_old",
         }
         input_language_dict = {
             "Chinese - Simplified": "zh-cn",
@@ -153,9 +157,13 @@ class ScreenshotArea(QWidget):
             "Chinese - Traditional": "zh-tw",
             "Chinese - Traditional (Vertical)": "zh-tw",
             "English": "en",
+            "French": "fr",
+            "Indonesian": "id",
             "Japanese": "ja",
             "Japanese (Vertical)": "ja",
             "Korean": "ko",
+            "Spanish": "es",
+            "Spanish - Old": "es",
         }
 
         self.ocr_language = ocr_language_dict.get(language)
@@ -167,8 +175,11 @@ class ScreenshotArea(QWidget):
             "Chinese - Simplified": "zh-cn",
             "Chinese - Traditional": "zh-tw",
             "English": "en",
+            "French": "fr",
+            "Indonesian": "id",
             "Japanese": "ja",
             "Korean": "ko",
+            "Spanish": "es",
         }
 
         self.output_language = language_dict.get(language)

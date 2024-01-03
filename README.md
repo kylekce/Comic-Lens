@@ -5,8 +5,11 @@ It is a Qt application written in Python, and uses [Pytesseract](https://github.
 
 It currently supports the following languages:
 * English
+* French
+* Indonesian
 * Japanese
 * Korean
+* Spanish
 * Chinese (Simplified)
 * Chinese (Traditional)
 

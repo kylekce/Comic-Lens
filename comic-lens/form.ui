@@ -819,6 +819,16 @@
                 </item>
                 <item>
                  <property name="text">
+                  <string>French</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Indonesian</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
                   <string>Japanese</string>
                  </property>
                 </item>
@@ -830,6 +840,16 @@
                 <item>
                  <property name="text">
                   <string>Korean</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Spanish</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Spanish - Old</string>
                  </property>
                 </item>
                </widget>
@@ -878,12 +898,27 @@
                 </item>
                 <item>
                  <property name="text">
+                  <string>French</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Indonesian</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
                   <string>Japanese</string>
                  </property>
                 </item>
                 <item>
                  <property name="text">
                   <string>Korean</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Spanish</string>
                  </property>
                 </item>
                </widget>
