@@ -13,8 +13,8 @@ It currently supports the following languages:
 * Chinese (Simplified)
 * Chinese (Traditional)
 
-<!-- Video -->
-<!-- ## Demo -->
+
+Video Demo for CS50p Final Project: https://youtu.be/JC6sqe1ZZnw
 
 
 ## Installation
