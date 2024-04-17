@@ -16,6 +16,17 @@ from pdf_viewer_widget import PDFViewer
 from screenshot_widget import ScreenshotArea
 
 
+def main():
+    app = QApplication(sys.argv)
+
+    # Set the application style to the default system style
+    app.setStyle("Fusion")
+
+    widget = MainWindow()
+    widget.show()
+    sys.exit(app.exec())
+
+
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
@@ -225,11 +236,4 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
 
 if __name__ == "__main__":
-    app = QApplication(sys.argv)
-
-    # Set the application style to the default system style
-    app.setStyle("Fusion")
-
-    widget = MainWindow()
-    widget.show()
-    sys.exit(app.exec())
+    main()
