@@ -9,7 +9,11 @@ class OCR:
         # Get the supported languages
         # supported_languages = pytesseract.get_languages()
         # print("Supported Languages:", supported_languages)
-        pass
+        
+        # Add tesseract to PATH
+        pytesseract.pytesseract.tesseract_cmd = (
+            "C:\\Program Files\\Tesseract-OCR\\tesseract.exe"
+        )
 
     def image_to_string(
         self,
