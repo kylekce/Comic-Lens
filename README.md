@@ -26,6 +26,9 @@ __Note:__ This application currently does not have a installer provided yet. So,
 * Googletrans ([Installation guide](https://github.com/ssut/py-googletrans))
 * OpenCV ([Installation guide](https://pypi.org/project/opencv-python/))
 * Pytesseract and its dependencies. ([Installation guide](https://github.com/madmaze/pytesseract))
+  * Notes:
+    * During installation, make sure to install the language packs as well.
+    * Make sure to install the Tesseract OCR engine on "C:\Program Files\Tesseract-OCR" or change the path in the `ocr.py` file.    
 * Make sure all the listed dependencies on the `requirements.txt` file are installed.
 
 ### Running the application
